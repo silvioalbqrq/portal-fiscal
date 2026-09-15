@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hub Fiscal — Canivete Suíço da Área Fiscal</title>
+  <meta name="description" content="Hub Fiscal: portal corporativo que reúne 11 ferramentas fiscais e tributárias — Reforma IBS/CBS, Simples Nacional, ISS e conversores. Atualização automática via GitHub Pages." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F2A44'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='bold' fill='white' text-anchor='middle'%3EHF%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <a class="skip-link" href="#ferramentas">Pular para ferramentas</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">HF</span>
+        <div>
+          <strong>Hub Fiscal</strong>
+          <small>Canivete suíço da área fiscal</small>
+        </div>
+      </div>
+      <nav class="topnav" aria-label="Navegação principal">
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#como-funciona">Como atualiza</a>
+        <a class="btn btn-outline" href="https://github.com/silvioalbqrq" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Reforma Tributária · EC 132/2023 · LC 214/2025</p>
+          <h1>As 11 ferramentas fiscais em um só portal corporativo</h1>
+          <p class="lede">
+            Simuladores de IBS/CBS, ISS, Fator R e conversores de documentos.
+            O Hub não duplica código: cada card abre a versão <strong>ao vivo</strong> do GitHub Pages.
+            Atualizou o repositório original, atualizou aqui.
+          </p>
+          <div class="search-row">
+            <label class="search-box">
+              <span class="visually-hidden">Buscar ferramenta</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <input id="busca" type="search" placeholder="Buscar por nome, tag ou uso… (ex: XML, ISS, DAS)" autocomplete="off" />
+            </label>
+          </div>
+          <div class="filters" role="group" aria-label="Filtrar por categoria">
+            <button class="chip active" data-filter="todos">Todos <span id="count-todos">11</span></button>
+            <button class="chip" data-filter="reforma">Reforma / IBS-CBS</button>
+            <button class="chip" data-filter="simples-iss">ISS / Simples</button>
+            <button class="chip" data-filter="conversores">Conversores</button>
+            <button class="chip" data-filter="estrategia">Estratégia</button>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Resumo do portal">
+          <div class="hero-stat"><strong id="stat-total">11</strong><span>ferramentas ativas</span></div>
+          <div class="hero-stat"><strong>100%</strong><span>client-side, sem servidor</span></div>
+          <div class="hero-stat"><strong>Auto</strong><span>sincronia com o Pages</span></div>
+          <p class="hero-note">Hospede este Hub como <code>portal-fiscal</code> no GitHub Pages: <code>silvioalbqrq.github.io/portal-fiscal/</code></p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="ferramentas" class="container section">
+      <div class="section-head">
+        <h2>Ferramentas</h2>
+        <p id="resultado-info">Exibindo 11 de 11 ferramentas.</p>
+      </div>
+      <div id="grid" class="grid" aria-live="polite"></div>
+      <div id="empty" class="empty" hidden>
+        <h3>Nenhuma ferramenta encontrada</h3>
+        <p>Ajuste a busca ou o filtro de categoria.</p>
+        <button id="limpar" class="btn btn-secondary">Limpar busca</button>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="container section">
+      <h2>Por que o Hub atualiza sozinho?</h2>
+      <div class="steps">
+        <article>
+          <span class="step-num">1</span>
+          <h3>Sem cópia de código</h3>
+          <p>O Hub guarda apenas nome, descrição e URL em <code>tools.json</code>. O código-fonte continua em cada um dos 11 repositórios.</p>
+        </article>
+        <article>
+          <span class="step-num">2</span>
+          <h3>Iframe + link oficial</h3>
+          <p>O botão <strong>Abrir</strong> carrega a URL ao vivo em um visualizador interno. O botão <strong>Nova aba</strong> abre o Pages original.</p>
+        </article>
+        <article>
+          <span class="step-num">3</span>
+          <h3>Nova ferramenta em 1 linha</h3>
+          <p>Para o 12º site, adicione um bloco em <code>tools.json</code> e publique. Nenhuma alteração de layout é necessária.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Hub Fiscal</strong>
+        <p>Portal educacional e informativo. Não substitui parecer técnico, consulta formal ou assessoria contábil/jurídica.</p>
+      </div>
+      <div>
+        <p>Contato: <a href="mailto:silvio.albqrq@gmail.com">silvio.albqrq@gmail.com</a></p>
+        <p><a href="https://github.com/silvioalbqrq" target="_blank" rel="noopener">github.com/silvioalbqrq</a></p>
+      </div>
+    </div>
+    <div class="container footer-base"><small>© 2026 Hub Fiscal · Bases: EC 132/2023, LC 214/2025, LC 123/2006</small></div>
+  </footer>
+
+  <!-- Visualizador interno (iframe) -->
+  <div id="viewer" class="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+    <div class="viewer-bar">
+      <div class="viewer-title">
+        <strong id="viewer-title">Ferramenta</strong>
+        <small id="viewer-url"></small>
+      </div>
+      <div class="viewer-actions">
+        <button id="viewer-reload" class="btn btn-outline btn-sm">Recarregar</button>
+        <a id="viewer-open" class="btn btn-primary btn-sm" href="#" target="_blank" rel="noopener">Nova aba</a>
+        <button id="viewer-close" class="btn btn-secondary btn-sm">Fechar ✕</button>
+      </div>
+    </div>
+    <div class="viewer-body">
+      <div id="viewer-loading" class="viewer-loading">Carregando ferramenta…</div>
+      <iframe id="viewer-frame" title="Visualizador da ferramenta" src="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

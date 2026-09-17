@@ -7,14 +7,18 @@ const FALLBACK_TOOLS = [
   { id: "fator-r", nome: "Calculadora Fator R & DAS", descricao: "Diagnóstico Anexo III vs. Anexo V, alíquota efetiva e DAS com segregação de ISS retido (Res. CGSN 140/18).", url: "https://silvioalbqrq.github.io/fator-r/", categoria: "simples-iss", categoriaLabel: "ISS / Simples Nacional", tags: ["Fator R", "Simples", "Anexo III", "Anexo V"] },
   { id: "iss-fixo", nome: "Portal do ISS Fixo", descricao: "Elegibilidade e economia para sociedades uniprofissionais — Fortaleza e Canindé/CE (DL 406/68, STF Tema 918).", url: "https://silvioalbqrq.github.io/iss-fixo/", categoria: "simples-iss", categoriaLabel: "ISS / Simples Nacional", tags: ["ISS Fixo", "Municipal", "Sociedades"] },
   { id: "tributacao-dentista", nome: "Tributação para Dentistas", descricao: "Guia prático: Fator R, equiparação hospitalar, livro-caixa, modelo híbrido CPF+CNPJ e Reforma 2027.", url: "https://silvioalbqrq.github.io/Tributacao-Dentista/", categoria: "simples-iss", categoriaLabel: "ISS / Simples Nacional", tags: ["Odonto", "Lucro Presumido", "Guia"] },
+  { id: "consulta-cest", nome: "Consulta CEST & NCM", descricao: "Localiza o CEST a partir da NCM ou descrição — 1.032 registros dos Anexos II a XXVI do Convênio ICMS 142/18, até Conv. 95/24, com exportação CSV.", url: "https://silvioalbqrq.github.io/consulta-cest/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["CEST", "NCM", "ST", "Convênio 142/18"] },
   { id: "conversor-xml-excel", nome: "Conversor XML → Excel", descricao: "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.", url: "https://silvioalbqrq.github.io/conversorXML-Excel/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["XML", "Excel", "NFe", "NFCe"] },
   { id: "docconvert", nome: "DocConvert — PDF/A & Compressor", descricao: "Imagem → PDF/A, compressão real de PDF e mesclagem com metadados. Tudo 100% no navegador.", url: "https://silvioalbqrq.github.io/DocConvert/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["PDF", "PDF/A", "Arquivo"] },
   { id: "converter-md", nome: "Conversor para Markdown", descricao: "Converte PDF, DOCX, XLSX e HTML em .md limpo para LLMs e documentação (ponte para app Streamlit).", url: "https://silvioalbqrq.github.io/converter-md/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["Markdown", "Documentos", "IA"] },
   { id: "60-oportunidades", nome: "60 Oportunidades Tributárias", descricao: "Mapa de teses de redução de carga e recuperação de créditos — PIS/COFINS, ICMS, IRPJ, previdenciário e IBS/CBS.", url: "https://silvioalbqrq.github.io/60-Oportunidades/", categoria: "estrategia", categoriaLabel: "Estratégia / Recuperação", tags: ["Planejamento", "Créditos", "Teses"] }
 ];
 
+const FAV_KEY = "hubfiscal:favoritos:v1";
+
 let TOOLS = [];
 let filtroAtual = "todos";
+let favoritos = new Set();
 
 const grid = document.getElementById("grid");
 const empty = document.getElementById("empty");
@@ -28,7 +32,32 @@ const viewerUrl = document.getElementById("viewer-url");
 const viewerOpen = document.getElementById("viewer-open");
 const viewerLoading = document.getElementById("viewer-loading");
 
+function carregarFavoritos() {
+  try {
+    const raw = localStorage.getItem(FAV_KEY);
+    if (!raw) return;
+    const arr = JSON.parse(raw);
+    if (Array.isArray(arr)) favoritos = new Set(arr.filter((x) => typeof x === "string"));
+  } catch (e) {
+    favoritos = new Set();
+  }
+}
+
+function salvarFavoritos() {
+  try {
+    localStorage.setItem(FAV_KEY, JSON.stringify(Array.from(favoritos)));
+  } catch (e) { /* armazenamento indisponível: ignora */ }
+}
+
+function alternarFavorito(id) {
+  if (favoritos.has(id)) favoritos.delete(id);
+  else favoritos.add(id);
+  salvarFavoritos();
+  render();
+}
+
 async function carregarFerramentas() {
+  carregarFavoritos();
   try {
     const resp = await fetch("tools.json", { cache: "no-store" });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
@@ -51,7 +80,9 @@ function normalizar(s) {
 function filtrar() {
   const termo = normalizar(busca.value.trim());
   return TOOLS.filter((t) => {
-    const okFiltro = filtroAtual === "todos" || t.categoria === filtroAtual;
+    let okFiltro = true;
+    if (filtroAtual === "favoritos") okFiltro = favoritos.has(t.id);
+    else if (filtroAtual !== "todos") okFiltro = t.categoria === filtroAtual;
     if (!okFiltro) return false;
     if (!termo) return true;
     const alvo = normalizar(t.nome + " " + t.descricao + " " + t.url + " " + (t.tags || []).join(" ") + " " + (t.categoriaLabel || ""));
@@ -63,10 +94,12 @@ function render() {
   const lista = filtrar();
   grid.innerHTML = "";
   lista.forEach((t) => {
+    const fav = favoritos.has(t.id);
     const card = document.createElement("article");
     card.className = "card";
     card.innerHTML =
-      '<div class="card-top"><span class="badge"></span></div>' +
+      '<div class="card-top"><span class="badge"></span>' +
+      '<button class="fav-btn" data-fav aria-pressed="false" title="Favoritar ferramenta">★</button></div>' +
       "<h3></h3><p></p>" +
       '<div class="tags"></div>' +
       '<div class="card-actions"><button class="btn btn-primary" data-open>Abrir</button>' +
@@ -81,6 +114,12 @@ function render() {
       s.textContent = tag;
       tagsBox.appendChild(s);
     });
+    const favBtn = card.querySelector("[data-fav]");
+    favBtn.classList.toggle("active", fav);
+    favBtn.setAttribute("aria-pressed", fav ? "true" : "false");
+    favBtn.setAttribute("aria-label", (fav ? "Remover dos favoritos: " : "Favoritar: ") + t.nome);
+    favBtn.setAttribute("title", fav ? "Remover dos favoritos" : "Favoritar ferramenta");
+    favBtn.addEventListener("click", () => alternarFavorito(t.id));
     const ext = card.querySelector("[data-ext]");
     ext.href = t.url;
     ext.setAttribute("aria-label", "Abrir " + t.nome + " em nova aba");
@@ -89,6 +128,13 @@ function render() {
     grid.appendChild(card);
   });
   empty.hidden = lista.length > 0;
+  if (filtroAtual === "favoritos" && lista.length === 0 && !busca.value.trim()) {
+    empty.querySelector("p").textContent = "Você ainda não favoritou nenhuma ferramenta. Toque na estrela ★ de um card para fixá-lo aqui.";
+  } else {
+    empty.querySelector("p").textContent = "Ajuste a busca ou o filtro de categoria.";
+  }
+  const favCount = document.getElementById("count-fav");
+  if (favCount) favCount.textContent = favoritos.size;
   resultadoInfo.textContent = "Exibindo " + lista.length + " de " + TOOLS.length + " ferramentas.";
 }
 

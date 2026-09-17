@@ -1,12 +1,12 @@
 # Hub Fiscal — Canivete Suíço da Área Fiscal
 
-Portal corporativo que reúne as 11 ferramentas fiscais em um só lugar.
+Portal corporativo que reúne as 12 ferramentas fiscais em um só lugar.
 
 **Regra de ouro:** o Hub não copia código. Cada card abre a URL oficial ao vivo
 (`iframe` interno + botão nova aba). Atualizou o repositório original no GitHub Pages,
 atualizou aqui automaticamente.
 
-## Ferramentas (11)
+## Ferramentas (12)
 
 | Categoria | Ferramenta | URL |
 |---|---|---|
@@ -17,6 +17,7 @@ atualizou aqui automaticamente.
 | ISS / Simples | Fator R & DAS | https://silvioalbqrq.github.io/fator-r/ |
 | ISS / Simples | ISS Fixo | https://silvioalbqrq.github.io/iss-fixo/ |
 | ISS / Simples | Tributação Dentistas | https://silvioalbqrq.github.io/Tributacao-Dentista/ |
+| Consultas / ICMS | Consulta CEST & NCM | https://silvioalbqrq.github.io/consulta-cest/ |
 | Conversores | XML → Excel | https://silvioalbqrq.github.io/conversorXML-Excel/ |
 | Conversores | DocConvert PDF/A | https://silvioalbqrq.github.io/DocConvert/ |
 | Conversores | Conversor Markdown | https://silvioalbqrq.github.io/converter-md/ |
@@ -31,7 +32,7 @@ atualizou aqui automaticamente.
 
 Teste local: abra `index.html` com duplo clique ou `python -m http.server` na pasta.
 
-## Adicionar a 12ª ferramenta
+## Adicionar a 13ª ferramenta
 
 Acrescente um bloco em `tools.json`:
 
@@ -47,4 +48,6 @@ Acrescente um bloco em `tools.json`:
 }
 ```
 
-Categorias válidas: `reforma`, `simples-iss`, `conversores`, `estrategia`.
+Categorias válidas: `reforma`, `consultas`, `simples-iss`, `conversores`, `estrategia`.
+
+Favoritos: estrela ★ em cada card, salvos em `localStorage` (`hubfiscal:favoritos:v1`) + filtro "Favoritos".

@@ -63,6 +63,15 @@
     "tags": ["Odonto", "Lucro Presumido", "Guia"]
   },
   {
+    "id": "consulta-cest",
+    "nome": "Consulta CEST & NCM",
+    "descricao": "Localiza o CEST a partir da NCM ou descrição — 1.032 registros dos Anexos II a XXVI do Convênio ICMS 142/18, até Conv. 95/24, com exportação CSV.",
+    "url": "https://silvioalbqrq.github.io/consulta-cest/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": ["CEST", "NCM", "ST", "Convênio 142/18"]
+  },
+  {
     "id": "conversor-xml-excel",
     "nome": "Conversor XML → Excel",
     "descricao": "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.",

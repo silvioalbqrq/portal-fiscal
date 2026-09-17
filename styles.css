@@ -74,6 +74,7 @@ body {
   border-radius: 999px; padding: 7px 12px; font-size: 13px; cursor: pointer;
 }
 .chip.active, .chip:hover { background: #fff; color: var(--navy); }
+.chip-fav.active { background: #ffd65c; border-color: #ffd65c; color: var(--navy); }
 .hero-card {
   background: #fff; color: var(--text); border-radius: var(--radius);
   padding: 20px; box-shadow: var(--shadow); align-self: start;
@@ -95,6 +96,13 @@ body {
   padding: 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px;
 }
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.fav-btn {
+  border: 1px solid var(--border); background: #fff; border-radius: 8px;
+  width: 32px; height: 32px; font-size: 17px; line-height: 1; cursor: pointer;
+  color: #b7c3d2; flex-shrink: 0;
+}
+.fav-btn:hover { border-color: var(--blue); color: var(--blue); }
+.fav-btn.active { color: #fff; background: var(--navy); border-color: var(--navy); }
 .badge {
   font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
   background: var(--blue-light); color: var(--blue); border-radius: 999px; padding: 4px 10px; white-space: nowrap;

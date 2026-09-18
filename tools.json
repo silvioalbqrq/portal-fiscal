@@ -72,6 +72,33 @@
     "tags": ["CEST", "NCM", "ST", "Convênio 142/18"]
   },
   {
+    "id": "consulta-cnae",
+    "nome": "Consulta CNAE — Simples Nacional",
+    "descricao": "Dashboard de enquadramento no Simples por CNAE (Subclasses IBGE 2.3, LC 123/06) — optante, ambíguo com Fator R, vedado e MEI, com análise de cartão CNPJ e simulador de alíquota efetiva.",
+    "url": "https://silvioalbqrq.github.io/consulta-cnae/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": ["CNAE", "Simples", "Fator R", "MEI"]
+  },
+  {
+    "id": "consulta-ncm",
+    "nome": "Consulta NCM × TIPI",
+    "descricao": "Painel NCM × TIPI (Decreto 11.158/2022 até ADE RFB 001/2026) — 15.653 linhas, busca por código/descrição, filtro por alíquota, EX e NT, com exportação CSV, 100% local.",
+    "url": "https://silvioalbqrq.github.io/consulta-ncm/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": ["NCM", "TIPI", "IPI", "Tabela"]
+  },
+  {
+    "id": "consulta-cfop",
+    "nome": "CFOP — Localizador de Operações",
+    "descricao": "Localizador de CFOP (entradas 1·2·3 / saídas 5·6·7, IT 2023.002 v2.10) — 619 registros com filtros de fluxo, UF e natureza, ficha completa e espelho de devolução.",
+    "url": "https://silvioalbqrq.github.io/consulta-cfop/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": ["CFOP", "NF-e", "Operações"]
+  },
+  {
     "id": "conversor-xml-excel",
     "nome": "Conversor XML → Excel",
     "descricao": "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.",

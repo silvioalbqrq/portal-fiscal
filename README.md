@@ -1,12 +1,12 @@
 # Hub Fiscal — Canivete Suíço da Área Fiscal
 
-Portal corporativo que reúne as 15 ferramentas fiscais em um só lugar.
+Portal corporativo que reúne as 16 ferramentas fiscais em um só lugar.
 
 **Regra de ouro:** o Hub não copia código. Cada card abre a URL oficial ao vivo
 (`iframe` interno + botão nova aba). Atualizou o repositório original no GitHub Pages,
 atualizou aqui automaticamente.
 
-## Ferramentas (15)
+## Ferramentas (16)
 
 | Categoria | Ferramenta | URL |
 |---|---|---|
@@ -21,6 +21,7 @@ atualizou aqui automaticamente.
 | Consultas / ICMS | Consulta CNAE — Simples | https://silvioalbqrq.github.io/consulta-cnae/ |
 | Consultas / ICMS | Consulta NCM × TIPI | https://silvioalbqrq.github.io/consulta-ncm/ |
 | Consultas / ICMS | CFOP — Localizador | https://silvioalbqrq.github.io/consulta-cfop/ |
+| Consultas / ICMS | SITRAM — Consulta NFe | https://silvioalbqrq.github.io/sitram-consulta-nfe/ |
 | Conversores | XML → Excel | https://silvioalbqrq.github.io/conversorXML-Excel/ |
 | Conversores | DocConvert PDF/A | https://silvioalbqrq.github.io/DocConvert/ |
 | Conversores | Conversor Markdown | https://silvioalbqrq.github.io/converter-md/ |
@@ -35,7 +36,7 @@ atualizou aqui automaticamente.
 
 Teste local: abra `index.html` com duplo clique ou `python -m http.server` na pasta.
 
-## Adicionar a 16ª ferramenta
+## Adicionar a 17ª ferramenta
 
 Acrescente um bloco em `tools.json`:
 

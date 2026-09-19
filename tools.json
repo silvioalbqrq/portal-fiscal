@@ -99,6 +99,15 @@
     "tags": ["CFOP", "NF-e", "Operações"]
   },
   {
+    "id": "sitram-consulta-nfe",
+    "nome": "SITRAM — Consulta NFe Interestadual",
+    "descricao": "Consulta em lote por chave de acesso (44 dígitos) no SITRAM/SEFAZ-CE — situação paga, a pagar, sem cobrança ou não selada, com CSV/TXT, painel de totais e exportação CSV.",
+    "url": "https://silvioalbqrq.github.io/sitram-consulta-nfe/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": ["SITRAM", "SEFAZ-CE", "NF-e", "Chave de acesso"]
+  },
+  {
     "id": "conversor-xml-excel",
     "nome": "Conversor XML → Excel",
     "descricao": "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.",

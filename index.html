@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hub Fiscal — Canivete Suíço da Área Fiscal</title>
   <meta name="description" content="Hub Fiscal: portal corporativo que reúne 16 ferramentas fiscais e tributárias — Reforma IBS/CBS, ICMS/CEST, Simples Nacional, ISS e conversores. Atualização automática via GitHub Pages." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-src https://silvioalbqrq.github.io; connect-src 'self'; object-src 'none'; base-uri 'self'" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F2A44'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='bold' fill='white' text-anchor='middle'%3EHF%3C/text%3E%3C/svg%3E" />
 </head>
@@ -47,13 +49,13 @@
             </label>
           </div>
           <div class="filters" role="group" aria-label="Filtrar por categoria">
-            <button class="chip active" data-filter="todos">Todos <span id="count-todos">16</span></button>
-            <button class="chip chip-fav" data-filter="favoritos">Favoritos <span id="count-fav">0</span></button>
-            <button class="chip" data-filter="reforma">Reforma / IBS-CBS</button>
-            <button class="chip" data-filter="consultas">Consultas / ICMS</button>
-            <button class="chip" data-filter="simples-iss">ISS / Simples</button>
-            <button class="chip" data-filter="conversores">Conversores</button>
-            <button class="chip" data-filter="estrategia">Estratégia</button>
+            <button class="chip active" data-filter="todos" aria-pressed="true">Todos <span id="count-todos">16</span></button>
+            <button class="chip chip-fav" data-filter="favoritos" aria-pressed="false">Favoritos <span id="count-fav">0</span></button>
+            <button class="chip" data-filter="reforma" aria-pressed="false">Reforma / IBS-CBS</button>
+            <button class="chip" data-filter="consultas" aria-pressed="false">Consultas / ICMS</button>
+            <button class="chip" data-filter="simples-iss" aria-pressed="false">ISS / Simples</button>
+            <button class="chip" data-filter="conversores" aria-pressed="false">Conversores</button>
+            <button class="chip" data-filter="estrategia" aria-pressed="false">Estratégia</button>
           </div>
         </div>
         <aside class="hero-card" aria-label="Resumo do portal">
@@ -71,6 +73,7 @@
         <p id="resultado-info">Exibindo 16 de 16 ferramentas.</p>
       </div>
       <div id="grid" class="grid" aria-live="polite"></div>
+      <noscript><div class="empty"><h3>Ative o JavaScript</h3><p>Este portal carrega as ferramentas via <code>tools.json</code> no navegador. Sem JavaScript, acesse os repositórios em <a href="https://github.com/silvioalbqrq">github.com/silvioalbqrq</a>.</p></div></noscript>
       <div id="empty" class="empty" hidden>
         <h3>Nenhuma ferramenta encontrada</h3>
         <p>Ajuste a busca ou o filtro de categoria.</p>
@@ -123,13 +126,13 @@
       </div>
       <div class="viewer-actions">
         <button id="viewer-reload" class="btn btn-outline btn-sm">Recarregar</button>
-        <a id="viewer-open" class="btn btn-primary btn-sm" href="#" target="_blank" rel="noopener">Nova aba</a>
+        <a id="viewer-open" class="btn btn-primary btn-sm" href="#" target="_blank" rel="noopener noreferrer">Nova aba</a>
         <button id="viewer-close" class="btn btn-secondary btn-sm">Fechar ✕</button>
       </div>
     </div>
     <div class="viewer-body">
       <div id="viewer-loading" class="viewer-loading">Carregando ferramenta…</div>
-      <iframe id="viewer-frame" title="Visualizador da ferramenta" src="" loading="lazy"></iframe>
+      <iframe id="viewer-frame" title="Visualizador da ferramenta" src="" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-downloads allow-popups-to-escape-sandbox" referrerpolicy="strict-origin-when-cross-origin" allow="clipboard-write 'none'"></iframe>
     </div>
   </div>
 

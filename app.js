@@ -19,6 +19,55 @@ const FALLBACK_TOOLS = [
 ];
 
 const FAV_KEY = "hubfiscal:favoritos:v1";
+const ALLOWED_ORIGIN = "https://silvioalbqrq.github.io";
+const ALLOWED_CATEGORIAS = ["reforma", "consultas", "simples-iss", "conversores", "estrategia"];
+
+function isUrlSegura(url) {
+  try {
+    const u = new URL(url, ALLOWED_ORIGIN);
+    return u.protocol === "https:" && u.origin === ALLOWED_ORIGIN;
+  } catch (e) {
+    return false;
+  }
+}
+
+function validarFerramenta(t) {
+  if (!t || typeof t !== "object") return false;
+  if (typeof t.id !== "string" || !t.id.trim()) return false;
+  if (typeof t.nome !== "string" || !t.nome.trim()) return false;
+  if (typeof t.url !== "string" || !isUrlSegura(t.url)) return false;
+  if (typeof t.categoria !== "string" || !ALLOWED_CATEGORIAS.includes(t.categoria)) return false;
+  if (t.tags !== undefined && !Array.isArray(t.tags)) return false;
+  return true;
+}
+
+function sanitizarLista(data) {
+  const vistos = new Set();
+  const limpa = [];
+  (Array.isArray(data) ? data : []).forEach((t) => {
+    if (!validarFerramenta(t)) {
+      console.warn("[Hub Fiscal] entrada descartada em tools.json:", t && t.id);
+      return;
+    }
+    if (vistos.has(t.id)) {
+      console.warn("[Hub Fiscal] id duplicado descartado:", t.id);
+      return;
+    }
+    vistos.add(t.id);
+    limpa.push(t);
+  });
+  return limpa;
+}
+
+function debounce(fn, ms) {
+  let timer = null;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), ms);
+  };
+}
+
+let ultimoFocoAntesViewer = null;
 
 let TOOLS = [];
 let filtroAtual = "todos";
@@ -50,7 +99,9 @@ function carregarFavoritos() {
 function salvarFavoritos() {
   try {
     localStorage.setItem(FAV_KEY, JSON.stringify(Array.from(favoritos)));
-  } catch (e) { /* armazenamento indisponível: ignora */ }
+  } catch (e) {
+    console.warn("[Hub Fiscal] localStorage indisponível:", e && e.name);
+  }
 }
 
 function alternarFavorito(id) {
@@ -66,11 +117,13 @@ async function carregarFerramentas() {
     const resp = await fetch("tools.json", { cache: "no-store" });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     const data = await resp.json();
-    if (!Array.isArray(data) || data.length === 0) throw new Error("JSON vazio");
-    TOOLS = data;
+    const limpa = sanitizarLista(data);
+    if (limpa.length === 0) throw new Error("JSON vazio ou inválido");
+    TOOLS = limpa;
   } catch (e) {
+    console.warn("[Hub Fiscal] usando FALLBACK_TOOLS:", e && e.message);
     // Fallback: permite abrir o index.html com duplo clique (file://) sem servidor
-    TOOLS = FALLBACK_TOOLS;
+    TOOLS = sanitizarLista(FALLBACK_TOOLS);
   }
   document.getElementById("stat-total").textContent = TOOLS.length;
   document.getElementById("count-todos").textContent = TOOLS.length;
@@ -98,6 +151,7 @@ function render() {
   const lista = filtrar();
   grid.innerHTML = "";
   lista.forEach((t) => {
+    if (!validarFerramenta(t)) return;
     const fav = favoritos.has(t.id);
     const card = document.createElement("article");
     card.className = "card";
@@ -126,6 +180,7 @@ function render() {
     favBtn.addEventListener("click", () => alternarFavorito(t.id));
     const ext = card.querySelector("[data-ext]");
     ext.href = t.url;
+    ext.setAttribute("rel", "noopener noreferrer");
     ext.setAttribute("aria-label", "Abrir " + t.nome + " em nova aba");
     card.querySelector("[data-open]").addEventListener("click", () => abrirViewer(t));
     card.querySelector(".card-url").textContent = t.url.replace("https://", "");
@@ -143,14 +198,18 @@ function render() {
 }
 
 function abrirViewer(tool) {
+  if (!validarFerramenta(tool)) {
+    console.warn("[Hub Fiscal] URL bloqueada:", tool && tool.url);
+    return;
+  }
+  ultimoFocoAntesViewer = document.activeElement;
   viewerTitle.textContent = tool.nome;
   viewerUrl.textContent = tool.url;
   viewerOpen.href = tool.url;
+  viewerOpen.setAttribute("rel", "noopener noreferrer");
   viewerLoading.style.display = "grid";
   viewerLoading.textContent = "Carregando " + tool.nome + "…";
-  // Cache-busting leve: garante versão mais recente sem quebrar o Pages
-  const sep = tool.url.includes("?") ? "&" : "?";
-  viewerFrame.src = tool.url + sep + "hub=1";
+  viewerFrame.src = tool.url;
   viewer.hidden = false;
   document.body.style.overflow = "hidden";
   document.getElementById("viewer-close").focus();
@@ -158,8 +217,12 @@ function abrirViewer(tool) {
 
 function fecharViewer() {
   viewer.hidden = true;
+  viewerFrame.removeAttribute("src");
   viewerFrame.src = "";
   document.body.style.overflow = "";
+  if (ultimoFocoAntesViewer && typeof ultimoFocoAntesViewer.focus === "function") {
+    ultimoFocoAntesViewer.focus();
+  }
 }
 
 viewerFrame.addEventListener("load", () => {
@@ -167,8 +230,14 @@ viewerFrame.addEventListener("load", () => {
 });
 document.getElementById("viewer-close").addEventListener("click", fecharViewer);
 document.getElementById("viewer-reload").addEventListener("click", () => {
-  viewerLoading.style.display = "grid";
-  viewerFrame.contentWindow.location.reload();
+  try {
+    viewerLoading.style.display = "grid";
+    const atual = viewerFrame.getAttribute("src") || viewerOpen.href;
+    viewerFrame.src = atual;
+  } catch (e) {
+    console.warn("[Hub Fiscal] reload via src:", e && e.message);
+    viewerFrame.src = viewerOpen.href;
+  }
 });
 viewer.addEventListener("click", (e) => {
   if (e.target === viewer) fecharViewer();
@@ -179,13 +248,17 @@ document.addEventListener("keydown", (e) => {
 
 document.querySelectorAll(".chip").forEach((chip) => {
   chip.addEventListener("click", () => {
-    document.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+    document.querySelectorAll(".chip").forEach((c) => {
+      c.classList.remove("active");
+      c.setAttribute("aria-pressed", "false");
+    });
     chip.classList.add("active");
+    chip.setAttribute("aria-pressed", "true");
     filtroAtual = chip.dataset.filter;
     render();
   });
 });
-busca.addEventListener("input", render);
+busca.addEventListener("input", debounce(render, 150));
 document.getElementById("limpar").addEventListener("click", () => {
   busca.value = "";
   render();

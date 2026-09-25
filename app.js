@@ -267,4 +267,38 @@ document.getElementById("limpar").addEventListener("click", () => {
   busca.focus();
 });
 
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const id = btn.getAttribute("data-copy");
+    const el = document.getElementById(id);
+    if (!el) return;
+    const texto = (el.getAttribute("data-full") || el.textContent || "").trim();
+    if (!texto || texto === "a informar") return;
+    try {
+      await navigator.clipboard.writeText(texto);
+      btn.textContent = "Copiado!";
+      setTimeout(() => { btn.textContent = "Copiar"; }, 1500);
+    } catch (e) {
+      console.warn("[Hub Fiscal] clipboard indisponível:", e && e.name);
+    }
+  });
+});
+
+document.querySelectorAll("[data-reveal]").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const el = document.getElementById(link.getAttribute("data-reveal"));
+    if (!el) return;
+    const full = el.getAttribute("data-full") || "";
+    if (!el.getAttribute("data-short")) el.setAttribute("data-short", el.textContent);
+    const short = el.getAttribute("data-short");
+    const mostrandoTudo = el.textContent === full;
+    el.textContent = mostrandoTudo ? short : full;
+    link.textContent = mostrandoTudo ? "ver chave completa" : "ocultar";
+    if (link.getAttribute("data-reveal") === "ln-address") {
+      link.textContent = mostrandoTudo ? "ver invoice completa" : "ocultar";
+    }
+  });
+});
+
 carregarFerramentas();

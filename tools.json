@@ -36,6 +36,15 @@
     "tags": ["E-book", "Setores", "LC 214/25"]
   },
   {
+    "id": "cst-cclasstrib",
+    "nome": "Consulta CST × cClassTrib (IBS/CBS)",
+    "descricao": "Busca única por CST, cClassTrib, NCM/NBS ou descrição do produto — 18 CSTs, 164 classificações e 10.522 NCMs, com filtros, detalhe e exportação CSV/JSON.",
+    "url": "https://silvioalbqrq.github.io/cst-cclasstrib/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": ["CST", "cClassTrib", "NCM", "IBS", "CBS"]
+  },
+  {
     "id": "fator-r",
     "nome": "Calculadora Fator R & DAS",
     "descricao": "Diagnóstico Anexo III vs. Anexo V, alíquota efetiva e DAS com segregação de ISS retido (Res. CGSN 140/18).",

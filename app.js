@@ -22,6 +22,7 @@ const FALLBACK_TOOLS = [
 ];
 
 const FAV_KEY = "hubfiscal:favoritos:v1";
+const APP_VERSION = "20260929-19";
 const ALLOWED_ORIGIN = "https://silvioalbqrq.github.io";
 const ALLOWED_CATEGORIAS = ["reforma", "consultas", "simples-iss", "conversores", "estrategia"];
 
@@ -117,7 +118,7 @@ function alternarFavorito(id) {
 async function carregarFerramentas() {
   carregarFavoritos();
   try {
-    const resp = await fetch("tools.json", { cache: "no-store" });
+    const resp = await fetch("tools.json?v=" + APP_VERSION, { cache: "no-store" });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     const data = await resp.json();
     const limpa = sanitizarLista(data);
@@ -128,9 +129,29 @@ async function carregarFerramentas() {
     // Fallback: permite abrir o index.html com duplo clique (file://) sem servidor
     TOOLS = sanitizarLista(FALLBACK_TOOLS);
   }
-  document.getElementById("stat-total").textContent = TOOLS.length;
-  document.getElementById("count-todos").textContent = TOOLS.length;
+  atualizarContadores();
   render();
+}
+
+function atualizarContadores() {
+  const total = TOOLS.length;
+  const setText = (id, valor) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = valor;
+  };
+  setText("stat-total", total);
+  setText("count-todos", total);
+  setText("hero-total", total);
+  setText("repo-count", total);
+  setText("next-site", total + 1);
+  const heroTitle = document.getElementById("hero-title");
+  if (heroTitle && !document.getElementById("hero-total")) {
+    heroTitle.textContent = "As " + total + " ferramentas fiscais em um só portal corporativo";
+  }
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) {
+    meta.setAttribute("content", meta.getAttribute("content").replace(/\d+ ferramentas/, total + " ferramentas"));
+  }
 }
 
 function normalizar(s) {

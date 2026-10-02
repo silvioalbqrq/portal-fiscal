@@ -169,5 +169,14 @@
     "categoria": "conversores",
     "categoriaLabel": "Conversores / Utilidades",
     "tags": ["CSV", "Excel", "Conversor"]
+  },
+  {
+    "id": "danfe-reforma-nt2026-010",
+    "nome": "DANFE · Reforma Tributária (NT 2026.010)",
+    "descricao": "Gera o DANFE no novo layout da Reforma a partir do XML da NF-e — bloco Total IBS/CBS/IS, cClassTrib por item e CRT do emitente. 100% local.",
+    "url": "https://silvioalbqrq.github.io/danfe-reforma-nt2026-010/",
+    "categoria": "conversores",
+    "categoriaLabel": "Conversores / Utilidades",
+    "tags": ["DANFE", "XML", "NF-e", "IBS", "CBS", "IS", "NT 2026.010"]
   }
 ]

@@ -6,7 +6,13 @@
     "url": "https://silvioalbqrq.github.io/AnaliseXML-IBSeCBS/",
     "categoria": "reforma",
     "categoriaLabel": "Reforma / IBS-CBS",
-    "tags": ["Reforma", "XML", "IBS", "CBS", "NF-e"]
+    "tags": [
+      "Reforma",
+      "XML",
+      "IBS",
+      "CBS",
+      "NF-e"
+    ]
   },
   {
     "id": "taxreform-das",
@@ -15,7 +21,12 @@
     "url": "https://silvioalbqrq.github.io/TaxReform/",
     "categoria": "reforma",
     "categoriaLabel": "Reforma / IBS-CBS",
-    "tags": ["Simples", "DAS", "Híbrido", "CGSN 186/26"]
+    "tags": [
+      "Simples",
+      "DAS",
+      "Híbrido",
+      "CGSN 186/26"
+    ]
   },
   {
     "id": "lc116-nbs",
@@ -24,16 +35,12 @@
     "url": "https://silvioalbqrq.github.io/LC116-NBS/",
     "categoria": "reforma",
     "categoriaLabel": "Reforma / IBS-CBS",
-    "tags": ["ISS", "LC 116", "NBS", "Consulta"]
-  },
-  {
-    "id": "50-segmentos",
-    "nome": "50 Segmentos na Reforma",
-    "descricao": "E-book setorial: impacto prático de IBS, CBS e IS em mais de 50 setores, com cronograma e regimes diferenciados.",
-    "url": "https://silvioalbqrq.github.io/50-Segmentos/",
-    "categoria": "reforma",
-    "categoriaLabel": "Reforma / IBS-CBS",
-    "tags": ["E-book", "Setores", "LC 214/25"]
+    "tags": [
+      "ISS",
+      "LC 116",
+      "NBS",
+      "Consulta"
+    ]
   },
   {
     "id": "cst-cclasstrib",
@@ -42,7 +49,13 @@
     "url": "https://silvioalbqrq.github.io/cst-cclasstrib/",
     "categoria": "reforma",
     "categoriaLabel": "Reforma / IBS-CBS",
-    "tags": ["CST", "cClassTrib", "NCM", "IBS", "CBS"]
+    "tags": [
+      "CST",
+      "cClassTrib",
+      "NCM",
+      "IBS",
+      "CBS"
+    ]
   },
   {
     "id": "fator-r",
@@ -51,7 +64,12 @@
     "url": "https://silvioalbqrq.github.io/fator-r/",
     "categoria": "simples-iss",
     "categoriaLabel": "ISS / Simples Nacional",
-    "tags": ["Fator R", "Simples", "Anexo III", "Anexo V"]
+    "tags": [
+      "Fator R",
+      "Simples",
+      "Anexo III",
+      "Anexo V"
+    ]
   },
   {
     "id": "iss-fixo",
@@ -60,16 +78,11 @@
     "url": "https://silvioalbqrq.github.io/iss-fixo/",
     "categoria": "simples-iss",
     "categoriaLabel": "ISS / Simples Nacional",
-    "tags": ["ISS Fixo", "Municipal", "Sociedades"]
-  },
-  {
-    "id": "tributacao-dentista",
-    "nome": "Tributação para Dentistas",
-    "descricao": "Guia prático: Fator R, equiparação hospitalar, livro-caixa, modelo híbrido CPF+CNPJ e Reforma 2027.",
-    "url": "https://silvioalbqrq.github.io/Tributacao-Dentista/",
-    "categoria": "simples-iss",
-    "categoriaLabel": "ISS / Simples Nacional",
-    "tags": ["Odonto", "Lucro Presumido", "Guia"]
+    "tags": [
+      "ISS Fixo",
+      "Municipal",
+      "Sociedades"
+    ]
   },
   {
     "id": "consulta-cest",
@@ -78,7 +91,12 @@
     "url": "https://silvioalbqrq.github.io/consulta-cest/",
     "categoria": "consultas",
     "categoriaLabel": "Consultas / ICMS",
-    "tags": ["CEST", "NCM", "ST", "Convênio 142/18"]
+    "tags": [
+      "CEST",
+      "NCM",
+      "ST",
+      "Convênio 142/18"
+    ]
   },
   {
     "id": "consulta-cnae",
@@ -87,7 +105,12 @@
     "url": "https://silvioalbqrq.github.io/consulta-cnae/",
     "categoria": "consultas",
     "categoriaLabel": "Consultas / ICMS",
-    "tags": ["CNAE", "Simples", "Fator R", "MEI"]
+    "tags": [
+      "CNAE",
+      "Simples",
+      "Fator R",
+      "MEI"
+    ]
   },
   {
     "id": "consulta-ncm",
@@ -96,7 +119,12 @@
     "url": "https://silvioalbqrq.github.io/consulta-ncm/",
     "categoria": "consultas",
     "categoriaLabel": "Consultas / ICMS",
-    "tags": ["NCM", "TIPI", "IPI", "Tabela"]
+    "tags": [
+      "NCM",
+      "TIPI",
+      "IPI",
+      "Tabela"
+    ]
   },
   {
     "id": "consulta-cfop",
@@ -105,7 +133,11 @@
     "url": "https://silvioalbqrq.github.io/consulta-cfop/",
     "categoria": "consultas",
     "categoriaLabel": "Consultas / ICMS",
-    "tags": ["CFOP", "NF-e", "Operações"]
+    "tags": [
+      "CFOP",
+      "NF-e",
+      "Operações"
+    ]
   },
   {
     "id": "sitram-consulta-nfe",
@@ -114,43 +146,27 @@
     "url": "https://silvioalbqrq.github.io/sitram-consulta-nfe/",
     "categoria": "consultas",
     "categoriaLabel": "Consultas / ICMS",
-    "tags": ["SITRAM", "SEFAZ-CE", "NF-e", "Chave de acesso"]
+    "tags": [
+      "SITRAM",
+      "SEFAZ-CE",
+      "NF-e",
+      "Chave de acesso"
+    ]
   },
   {
-    "id": "conversor-xml-excel",
-    "nome": "Conversor XML → Excel",
-    "descricao": "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.",
-    "url": "https://silvioalbqrq.github.io/conversorXML-Excel/",
-    "categoria": "conversores",
-    "categoriaLabel": "Conversores / Utilidades",
-    "tags": ["XML", "Excel", "NFe", "NFCe"]
-  },
-  {
-    "id": "docconvert",
-    "nome": "DocConvert — PDF/A & Compressor",
-    "descricao": "Imagem → PDF/A, compressão real de PDF e mesclagem com metadados. Tudo 100% no navegador.",
-    "url": "https://silvioalbqrq.github.io/DocConvert/",
-    "categoria": "conversores",
-    "categoriaLabel": "Conversores / Utilidades",
-    "tags": ["PDF", "PDF/A", "Arquivo"]
-  },
-  {
-    "id": "converter-md",
-    "nome": "Conversor para Markdown",
-    "descricao": "Converte PDF, DOCX, XLSX e HTML em .md limpo para LLMs e documentação (ponte para app Streamlit).",
-    "url": "https://silvioalbqrq.github.io/converter-md/",
-    "categoria": "conversores",
-    "categoriaLabel": "Conversores / Utilidades",
-    "tags": ["Markdown", "Documentos", "IA"]
-  },
-  {
-    "id": "60-oportunidades",
-    "nome": "60 Oportunidades Tributárias",
-    "descricao": "Mapa de teses de redução de carga e recuperação de créditos — PIS/COFINS, ICMS, IRPJ, previdenciário e IBS/CBS.",
-    "url": "https://silvioalbqrq.github.io/60-Oportunidades/",
-    "categoria": "estrategia",
-    "categoriaLabel": "Estratégia / Recuperação",
-    "tags": ["Planejamento", "Créditos", "Teses"]
+    "id": "central-dfe",
+    "nome": "Central DFe — Baixar XML NF-e",
+    "descricao": "Central multi-empresa: baixa XML da SEFAZ por chave, lote ou planilha xlsx/csv/txt, importa XMLs de pasta/zip e exporta DANFE e Excel.",
+    "url": "https://silvioalbqrq.github.io/baixar-xml-nfe/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "NF-e",
+      "XML",
+      "SEFAZ",
+      "Chave de acesso",
+      "DANFE"
+    ]
   },
   {
     "id": "identificador-crt",
@@ -159,7 +175,53 @@
     "url": "https://silvioalbqrq.github.io/identificador-regime-crt/",
     "categoria": "consultas",
     "categoriaLabel": "Consultas / ICMS",
-    "tags": ["CRT", "XML", "Simples", "Presumido", "MEI"]
+    "tags": [
+      "CRT",
+      "XML",
+      "Simples",
+      "Presumido",
+      "MEI"
+    ]
+  },
+  {
+    "id": "conversor-xml-excel",
+    "nome": "Conversor XML → Excel",
+    "descricao": "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.",
+    "url": "https://silvioalbqrq.github.io/conversorXML-Excel/",
+    "categoria": "conversores",
+    "categoriaLabel": "Conversores / Utilidades",
+    "tags": [
+      "XML",
+      "Excel",
+      "NFe",
+      "NFCe"
+    ]
+  },
+  {
+    "id": "docconvert",
+    "nome": "DocConvert — PDF/A & Compressor",
+    "descricao": "Imagem → PDF/A, compressão real de PDF e mesclagem com metadados. Tudo 100% no navegador.",
+    "url": "https://silvioalbqrq.github.io/DocConvert/",
+    "categoria": "conversores",
+    "categoriaLabel": "Conversores / Utilidades",
+    "tags": [
+      "PDF",
+      "PDF/A",
+      "Arquivo"
+    ]
+  },
+  {
+    "id": "converter-md",
+    "nome": "Conversor para Markdown",
+    "descricao": "Converte PDF, DOCX, XLSX e HTML em .md limpo para LLMs e documentação (ponte para app Streamlit).",
+    "url": "https://silvioalbqrq.github.io/converter-md/",
+    "categoria": "conversores",
+    "categoriaLabel": "Conversores / Utilidades",
+    "tags": [
+      "Markdown",
+      "Documentos",
+      "IA"
+    ]
   },
   {
     "id": "conversor-csv-excel",
@@ -168,15 +230,49 @@
     "url": "https://silvioalbqrq.github.io/converter-csv-excel/",
     "categoria": "conversores",
     "categoriaLabel": "Conversores / Utilidades",
-    "tags": ["CSV", "Excel", "Conversor"]
+    "tags": [
+      "CSV",
+      "Excel",
+      "Conversor"
+    ]
   },
   {
-    "id": "danfe-reforma-nt2026-010",
-    "nome": "DANFE · Reforma Tributária (NT 2026.010)",
-    "descricao": "Gera o DANFE no novo layout da Reforma a partir do XML da NF-e — bloco Total IBS/CBS/IS, cClassTrib por item e CRT do emitente. 100% local.",
-    "url": "https://silvioalbqrq.github.io/danfe-reforma-nt2026-010/",
-    "categoria": "conversores",
-    "categoriaLabel": "Conversores / Utilidades",
-    "tags": ["DANFE", "XML", "NF-e", "IBS", "CBS", "IS", "NT 2026.010"]
+    "id": "50-segmentos",
+    "nome": "50 Segmentos na Reforma",
+    "descricao": "E-book setorial: impacto prático de IBS, CBS e IS em mais de 50 setores, com cronograma e regimes diferenciados.",
+    "url": "https://silvioalbqrq.github.io/50-Segmentos/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "E-book",
+      "Setores",
+      "LC 214/25"
+    ]
+  },
+  {
+    "id": "tributacao-dentista",
+    "nome": "Tributação para Dentistas",
+    "descricao": "Guia prático: Fator R, equiparação hospitalar, livro-caixa, modelo híbrido CPF+CNPJ e Reforma 2027.",
+    "url": "https://silvioalbqrq.github.io/Tributacao-Dentista/",
+    "categoria": "simples-iss",
+    "categoriaLabel": "ISS / Simples Nacional",
+    "tags": [
+      "Odonto",
+      "Lucro Presumido",
+      "Guia"
+    ]
+  },
+  {
+    "id": "60-oportunidades",
+    "nome": "60 Oportunidades Tributárias",
+    "descricao": "Mapa de teses de redução de carga e recuperação de créditos — PIS/COFINS, ICMS, IRPJ, previdenciário e IBS/CBS.",
+    "url": "https://silvioalbqrq.github.io/60-Oportunidades/",
+    "categoria": "estrategia",
+    "categoriaLabel": "Estratégia / Recuperação",
+    "tags": [
+      "Planejamento",
+      "Créditos",
+      "Teses"
+    ]
   }
 ]

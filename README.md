@@ -36,22 +36,4 @@ atualizou aqui automaticamente.
 
 Teste local: abra `index.html` com duplo clique ou `python -m http.server` na pasta.
 
-## Adicionar a 17ª ferramenta
-
-Acrescente um bloco em `tools.json`:
-
-```json
-{
-  "id": "nova-ferramenta",
-  "nome": "Nome",
-  "descricao": "Descrição de 1 linha",
-  "url": "https://silvioalbqrq.github.io/NOVO-REPO/",
-  "categoria": "reforma",
-  "categoriaLabel": "Reforma / IBS-CBS",
-  "tags": ["Tag1", "Tag2"]
-}
-```
-
-Categorias válidas: `reforma`, `consultas`, `simples-iss`, `conversores`, `estrategia`.
-
 Favoritos: estrela ★ em cada card, salvos em `localStorage` (`hubfiscal:favoritos:v1`) + filtro "Favoritos".

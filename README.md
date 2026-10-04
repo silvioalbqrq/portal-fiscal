@@ -1,18 +1,20 @@
 # Hub Fiscal — Canivete Suíço da Área Fiscal
 
-Portal corporativo que reúne as 16 ferramentas fiscais em um só lugar.
+Portal corporativo que reúne as 21 ferramentas fiscais em um só lugar.
 
 **Regra de ouro:** o Hub não copia código. Cada card abre a URL oficial ao vivo
 (`iframe` interno + botão nova aba). Atualizou o repositório original no GitHub Pages,
 atualizou aqui automaticamente.
 
-## Ferramentas (16)
+## Ferramentas (21)
 
 | Categoria | Ferramenta | URL |
 |---|---|---|
+| Reforma / IBS-CBS | DANFE Reforma Tributária (NT 2026.010) | https://silvioalbqrq.github.io/danfe-reforma-nt2026-010/ |
 | Reforma / IBS-CBS | Análise XML — IBS e CBS | https://silvioalbqrq.github.io/AnaliseXML-IBSeCBS/ |
 | Reforma / IBS-CBS | IBS/CBS Dentro ou Fora do DAS | https://silvioalbqrq.github.io/TaxReform/ |
 | Reforma / IBS-CBS | LC 116 × NBS | https://silvioalbqrq.github.io/LC116-NBS/ |
+| Reforma / IBS-CBS | Consulta CST × cClassTrib (IBS/CBS) | https://silvioalbqrq.github.io/cst-cclasstrib/ |
 | Reforma / IBS-CBS | 50 Segmentos na Reforma | https://silvioalbqrq.github.io/50-Segmentos/ |
 | ISS / Simples | Fator R & DAS | https://silvioalbqrq.github.io/fator-r/ |
 | ISS / Simples | ISS Fixo | https://silvioalbqrq.github.io/iss-fixo/ |
@@ -22,9 +24,12 @@ atualizou aqui automaticamente.
 | Consultas / ICMS | Consulta NCM × TIPI | https://silvioalbqrq.github.io/consulta-ncm/ |
 | Consultas / ICMS | CFOP — Localizador | https://silvioalbqrq.github.io/consulta-cfop/ |
 | Consultas / ICMS | SITRAM — Consulta NFe | https://silvioalbqrq.github.io/sitram-consulta-nfe/ |
+| Consultas / ICMS | Central DFe — Baixar XML NF-e | https://silvioalbqrq.github.io/baixar-xml-nfe/ |
+| Consultas / ICMS | Identificador de Regime — CRT | https://silvioalbqrq.github.io/identificador-regime-crt/ |
 | Conversores | XML → Excel | https://silvioalbqrq.github.io/conversorXML-Excel/ |
 | Conversores | DocConvert PDF/A | https://silvioalbqrq.github.io/DocConvert/ |
 | Conversores | Conversor Markdown | https://silvioalbqrq.github.io/converter-md/ |
+| Conversores | Conversor CSV ↔ Excel Pro | https://silvioalbqrq.github.io/converter-csv-excel/ |
 | Estratégia | 60 Oportunidades | https://silvioalbqrq.github.io/60-Oportunidades/ |
 
 ## Publicar como `portal-fiscal` no GitHub Pages

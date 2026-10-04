@@ -1,5 +1,20 @@
 [
   {
+    "id": "danfe-reforma-nt2026",
+    "nome": "DANFE Reforma Tributária (NT 2026.010)",
+    "descricao": "XML → DANFE no layout da Reforma: bloco Total IBS/CBS/IS, cClassTrib por item, CRT do emitente e validação da chave, 100% local.",
+    "url": "https://silvioalbqrq.github.io/danfe-reforma-nt2026-010/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "DANFE",
+      "NF-e",
+      "IBS",
+      "CBS",
+      "NT 2026.010"
+    ]
+  },
+  {
     "id": "analise-xml-ibs-cbs",
     "nome": "Análise XML — IBS e CBS",
     "descricao": "Leitor de XML da NF-e com apuração de vBC, IBS (UF + Município) e CBS, itens por produto e exportação CSV.",

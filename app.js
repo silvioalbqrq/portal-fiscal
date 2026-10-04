@@ -1,5 +1,6 @@
 /* Hub Fiscal — renderização via tools.json (com fallback local para abrir via file://) */
 const FALLBACK_TOOLS = [
+  { id: "danfe-reforma-nt2026", nome: "DANFE Reforma Tributária (NT 2026.010)", descricao: "XML → DANFE no layout da Reforma: bloco Total IBS/CBS/IS, cClassTrib por item, CRT do emitente e validação da chave, 100% local.", url: "https://silvioalbqrq.github.io/danfe-reforma-nt2026-010/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["DANFE", "NF-e", "IBS", "CBS", "NT 2026.010"] },
   { id: "analise-xml-ibs-cbs", nome: "Análise XML — IBS e CBS", descricao: "Leitor de XML da NF-e com apuração de vBC, IBS (UF + Município) e CBS, itens por produto e exportação CSV.", url: "https://silvioalbqrq.github.io/AnaliseXML-IBSeCBS/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["Reforma", "XML", "IBS", "CBS", "NF-e"] },
   { id: "taxreform-das", nome: "IBS/CBS Dentro ou Fora do DAS", descricao: "Simulador do Simples Nacional: RBT12 oficial, cronograma 2026–2033, alíquotas editáveis e parecer B2B.", url: "https://silvioalbqrq.github.io/TaxReform/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["Simples", "DAS", "Híbrido", "CGSN 186/26"] },
   { id: "lc116-nbs", nome: "LC 116 × NBS — Local do ISS", descricao: "Correlação oficial LC 116/2003 → NBS (Anexo VIII) com local do ISS (art. 3º) e local IBS/CBS.", url: "https://silvioalbqrq.github.io/LC116-NBS/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["ISS", "LC 116", "NBS", "Consulta"] },
@@ -23,7 +24,7 @@ const FALLBACK_TOOLS = [
 ];
 
 const FAV_KEY = "hubfiscal:favoritos:v1";
-const APP_VERSION = "20260929-19";
+const APP_VERSION = "20261004-21";
 const ALLOWED_ORIGIN = "https://silvioalbqrq.github.io";
 const ALLOWED_CATEGORIAS = ["reforma", "consultas", "simples-iss", "conversores", "estrategia"];
 

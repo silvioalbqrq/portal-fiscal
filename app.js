@@ -24,7 +24,11 @@ const FALLBACK_TOOLS = [
 ];
 
 const FAV_KEY = "hubfiscal:favoritos:v1";
-const APP_VERSION = "20261004-21";
+const APP_VERSION = "20261005-22";
+// Aliases de IDs renomeados: favorito antigo -> ID atual (migração automática).
+const FAV_ALIASES = {
+  "danfe-reforma-nt2026-010": "danfe-reforma-nt2026",
+};
 const ALLOWED_ORIGIN = "https://silvioalbqrq.github.io";
 const ALLOWED_CATEGORIAS = ["reforma", "consultas", "simples-iss", "conversores", "estrategia"];
 
@@ -117,6 +121,35 @@ function alternarFavorito(id) {
   render();
 }
 
+function contarFavoritosValidos() {
+  if (!TOOLS.length) return favoritos.size;
+  const ids = new Set(TOOLS.map((t) => t.id));
+  let n = 0;
+  favoritos.forEach((id) => { if (ids.has(id)) n++; });
+  return n;
+}
+
+function sincronizarFavoritos() {
+  if (!TOOLS.length) return;
+  const ids = new Set(TOOLS.map((t) => t.id));
+  let mudou = false;
+  const sincronizados = new Set();
+  favoritos.forEach((id) => {
+    const atual = FAV_ALIASES[id] || id;
+    if (atual !== id) mudou = true;
+    if (ids.has(atual)) {
+      sincronizados.add(atual);
+    } else {
+      mudou = true;
+      console.warn("[Hub Fiscal] favorito descartado (id inexistente):", id);
+    }
+  });
+  if (mudou) {
+    favoritos = sincronizados;
+    salvarFavoritos();
+  }
+}
+
 async function carregarFerramentas() {
   carregarFavoritos();
   try {
@@ -131,6 +164,7 @@ async function carregarFerramentas() {
     // Fallback: permite abrir o index.html com duplo clique (file://) sem servidor
     TOOLS = sanitizarLista(FALLBACK_TOOLS);
   }
+  sincronizarFavoritos();
   atualizarContadores();
   render();
 }
@@ -212,15 +246,16 @@ function render() {
     card.querySelector(".card-url").textContent = t.url.replace("https://", "");
     grid.appendChild(card);
   });
-  empty.hidden = lista.length > 0;
-  if (filtroAtual === "favoritos" && lista.length === 0 && !busca.value.trim()) {
+  const exibidos = grid.children.length;
+  empty.hidden = exibidos > 0;
+  if (filtroAtual === "favoritos" && exibidos === 0 && !busca.value.trim()) {
     empty.querySelector("p").textContent = "Você ainda não favoritou nenhuma ferramenta. Toque na estrela ★ de um card para fixá-lo aqui.";
   } else {
     empty.querySelector("p").textContent = "Ajuste a busca ou o filtro de categoria.";
   }
   const favCount = document.getElementById("count-fav");
-  if (favCount) favCount.textContent = favoritos.size;
-  resultadoInfo.textContent = "Exibindo " + lista.length + " de " + TOOLS.length + " ferramentas.";
+  if (favCount) favCount.textContent = contarFavoritosValidos();
+  resultadoInfo.textContent = "Exibindo " + exibidos + " de " + TOOLS.length + " ferramentas.";
 }
 
 function abrirViewer(tool) {

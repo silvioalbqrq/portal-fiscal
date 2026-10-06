@@ -199,6 +199,22 @@
     ]
   },
   {
+    "id": "pis-cofins-monofasico-ncm",
+    "nome": "PIS/COFINS Monofásico por NCM — Leitor de XML",
+    "descricao": "Importa XMLs de NFCe (65) e NFe (55) avulsos, de pasta ou .ZIP, indica item a item se o NCM é monofásico (Tab. 4.3.10 v1.25) e totaliza SIM/NÃO + serviços, com exportação Excel/CSV.",
+    "url": "https://silvioalbqrq.github.io/PIS-COFINS-Monofasico-por-NCM/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "PIS",
+      "COFINS",
+      "Monofásico",
+      "NCM",
+      "XML",
+      "NFCe"
+    ]
+  },
+  {
     "id": "conversor-xml-excel",
     "nome": "Conversor XML → Excel",
     "descricao": "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.",

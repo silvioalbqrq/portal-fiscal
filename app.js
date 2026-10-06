@@ -14,6 +14,7 @@ const FALLBACK_TOOLS = [
   { id: "sitram-consulta-nfe", nome: "SITRAM — Consulta NFe Interestadual", descricao: "Consulta em lote por chave de acesso (44 dígitos) no SITRAM/SEFAZ-CE — situação paga, a pagar, sem cobrança ou não selada, com CSV/TXT, painel de totais e exportação CSV.", url: "https://silvioalbqrq.github.io/sitram-consulta-nfe/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["SITRAM", "SEFAZ-CE", "NF-e", "Chave de acesso"] },
   { id: "central-dfe", nome: "Central DFe — Baixar XML NF-e", descricao: "Central multi-empresa: baixa XML da SEFAZ por chave, lote ou planilha xlsx/csv/txt, importa XMLs de pasta/zip e exporta DANFE e Excel.", url: "https://silvioalbqrq.github.io/baixar-xml-nfe/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["NF-e", "XML", "SEFAZ", "Chave de acesso", "DANFE"] },
   { id: "identificador-crt", nome: "Identificador de Regime — CRT", descricao: "Lê a tag CRT do XML da NF-e/NFC-e e identifica Simples, excesso sublimite, Presumido, Real e MEI, com totais e CSV.", url: "https://silvioalbqrq.github.io/identificador-regime-crt/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["CRT", "XML", "Simples", "Presumido", "MEI"] },
+  { id: "pis-cofins-monofasico-ncm", nome: "PIS/COFINS Monofásico por NCM — Leitor de XML", descricao: "Importa XMLs de NFCe (65) e NFe (55) avulsos, de pasta ou .ZIP, indica item a item se o NCM é monofásico (Tab. 4.3.10 v1.25) e totaliza SIM/NÃO + serviços, com exportação Excel/CSV.", url: "https://silvioalbqrq.github.io/PIS-COFINS-Monofasico-por-NCM/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["PIS", "COFINS", "Monofásico", "NCM", "XML", "NFCe"] },
   { id: "conversor-xml-excel", nome: "Conversor XML → Excel", descricao: "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.", url: "https://silvioalbqrq.github.io/conversorXML-Excel/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["XML", "Excel", "NFe", "NFCe"] },
   { id: "docconvert", nome: "DocConvert — PDF/A & Compressor", descricao: "Imagem → PDF/A, compressão real de PDF e mesclagem com metadados. Tudo 100% no navegador.", url: "https://silvioalbqrq.github.io/DocConvert/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["PDF", "PDF/A", "Arquivo"] },
   { id: "converter-md", nome: "Conversor para Markdown", descricao: "Converte PDF, DOCX, XLSX e HTML em .md limpo para LLMs e documentação (ponte para app Streamlit).", url: "https://silvioalbqrq.github.io/converter-md/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["Markdown", "Documentos", "IA"] },
@@ -24,7 +25,7 @@ const FALLBACK_TOOLS = [
 ];
 
 const FAV_KEY = "hubfiscal:favoritos:v1";
-const APP_VERSION = "20261005-22";
+const APP_VERSION = "20261006-01";
 // Aliases de IDs renomeados: favorito antigo -> ID atual (migração automática).
 const FAV_ALIASES = {
   "danfe-reforma-nt2026-010": "danfe-reforma-nt2026",

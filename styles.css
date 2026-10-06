@@ -1,13 +1,14 @@
 :root {
   --navy: #0f2a44;
   --navy-2: #1a3a5c;
-  --blue: #1a5fb4;
-  --blue-light: #e8f0fa;
-  --bg: #f4f6f9;
+  --gold: #c9a227;
+  --gold-2: #a8861b;
+  --goldbg: #faf4e0;
+  --bg: #edf1f5;
   --card: #ffffff;
-  --text: #1c2733;
-  --muted: #5b6b7d;
-  --border: #dde5ee;
+  --text: #1e2a38;
+  --muted: #5d6e80;
+  --border: #dce4ec;
   --radius: 14px;
   --shadow: 0 8px 24px rgba(15, 42, 68, 0.08);
 }
@@ -28,12 +29,12 @@ body {
 .skip-link:focus { left: 8px; top: 8px; }
 
 /* Topo */
-.topbar { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 20; }
+.topbar { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 20; border-bottom: 3px solid var(--gold); }
 .topbar-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; padding-bottom: 12px; }
 .brand { display: flex; gap: 12px; align-items: center; }
 .brand-mark {
   width: 42px; height: 42px; border-radius: 10px;
-  background: #fff; color: var(--navy);
+  background: var(--gold); color: var(--navy);
   display: grid; place-items: center; font-weight: 800;
 }
 .brand strong { display: block; font-size: 18px; line-height: 1.1; }
@@ -49,17 +50,19 @@ body {
   text-decoration: none; cursor: pointer; border: 1px solid transparent;
 }
 .btn-sm { padding: 7px 10px; font-size: 13px; }
-.btn-primary { background: var(--blue); color: #fff; }
-.btn-primary:hover { background: #144d92; }
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-primary:hover { background: var(--navy-2); }
 .btn-secondary { background: #eef2f7; color: var(--navy); border-color: var(--border); }
 .btn-secondary:hover { background: #e2e9f2; }
 .btn-outline { border-color: rgba(255,255,255,.5); color: #fff; background: transparent; }
 .viewer-actions .btn-outline { border-color: var(--border); color: var(--navy); }
 
+.btn:focus-visible, .chip:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
 /* Hero */
-.hero { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; padding: 40px 0 34px; }
+.hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; padding: 40px 0 34px; border-bottom: 4px solid var(--gold); }
 .hero-grid { display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; }
-.eyebrow { color: #9fc0e3; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; margin: 0 0 10px; font-weight: 700; }
+.eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; margin: 0 0 10px; font-weight: 700; }
 .hero h1 { margin: 0 0 12px; font-size: clamp(26px, 4vw, 40px); line-height: 1.15; }
 .lede { color: #d7e3f2; max-width: 640px; }
 .search-row { margin-top: 18px; max-width: 640px; }
@@ -74,7 +77,7 @@ body {
   border-radius: 999px; padding: 7px 12px; font-size: 13px; cursor: pointer;
 }
 .chip.active, .chip:hover { background: #fff; color: var(--navy); }
-.chip-fav.active { background: #ffd65c; border-color: #ffd65c; color: var(--navy); }
+.chip-fav.active { background: var(--gold); border-color: var(--gold); color: var(--navy); }
 .hero-card {
   background: #fff; color: var(--text); border-radius: var(--radius);
   padding: 20px; box-shadow: var(--shadow); align-self: start;
@@ -88,7 +91,7 @@ body {
 /* Seções e cards */
 .section { padding: 34px 20px; }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.section-head h2, .section h2 { color: var(--navy); margin: 0 0 6px; }
+.section-head h2, .section h2 { color: var(--navy); margin: 0 0 6px; border-left: 4px solid var(--gold); padding-left: 10px; }
 #resultado-info { color: var(--muted); font-size: 14px; margin: 0; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
 .card {
@@ -101,11 +104,11 @@ body {
   width: 32px; height: 32px; font-size: 17px; line-height: 1; cursor: pointer;
   color: #b7c3d2; flex-shrink: 0;
 }
-.fav-btn:hover { border-color: var(--blue); color: var(--blue); }
+.fav-btn:hover { border-color: var(--gold-2); color: var(--gold-2); }
 .fav-btn.active { color: #fff; background: var(--navy); border-color: var(--navy); }
 .badge {
   font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
-  background: var(--blue-light); color: var(--blue); border-radius: 999px; padding: 4px 10px; white-space: nowrap;
+  background: var(--goldbg); color: var(--gold-2); border: 1px solid var(--gold); border-radius: 999px; padding: 4px 10px; white-space: nowrap;
 }
 .card h3 { margin: 0; font-size: 17px; color: var(--navy); }
 .card p { margin: 0; color: var(--muted); font-size: 14px; flex: 1; }
@@ -122,20 +125,20 @@ body {
 .steps article { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
 .step-num {
   display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
-  background: var(--navy); color: #fff; font-weight: 800; font-size: 14px; margin-bottom: 8px;
+  background: var(--gold); color: var(--navy); font-weight: 800; font-size: 14px; margin-bottom: 8px;
 }
 .steps h3 { margin: 0 0 6px; color: var(--navy); font-size: 16px; }
 .steps p { margin: 0; color: var(--muted); font-size: 14px; }
 code { font-family: Consolas, monospace; font-size: .92em; }
 
 /* Rodapé */
-.footer { background: var(--navy); color: #cdd9e8; margin-top: 20px; }
+.footer { background: var(--navy); color: #cdd9e8; margin-top: 20px; border-top: 4px solid var(--gold); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; padding-top: 26px; padding-bottom: 10px; }
 .footer strong { color: #fff; }
 .footer a { color: #fff; }
 .footer .btn-sm { padding: 4px 8px; font-size: 12px; margin-left: 6px; }
 .footer .donate-code { font-family: Consolas, monospace; font-size: 12px; background: rgba(255,255,255,.1); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
-.footer .reveal-link { color: #9fc0e3; font-size: 12px; }
+.footer .reveal-link { color: var(--gold); font-size: 12px; }
 .footer small { color: #9db1c7; }
 .footer-base { border-top: 1px solid rgba(255,255,255,.15); padding-top: 12px; padding-bottom: 18px; }
 .contact-icons { display: flex; gap: 10px; margin-top: 10px; }

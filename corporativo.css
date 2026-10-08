@@ -1,0 +1,30 @@
+/* Tema corporativo VMF — sobrepõe styles.css sem alterar estrutura/JS.
+   Mesma identidade do Consulta CST × cClassTrib: serifas + marinho + dourado. */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f4f2ec;
+}
+
+.brand small { letter-spacing: 0.02em; }
+.brand small b { color: var(--gold); font-weight: 600; }
+
+.hero h1, .section-head h2, .section h2, .card h3, .steps h3,
+.viewer-title strong, .empty h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow { letter-spacing: 0.22em; }
+.hero { border-bottom: 4px solid var(--gold); }
+.hero-card { border-top: 3px solid var(--gold); }
+.card { border-top: 3px solid var(--gold); }
+.steps article { border-top: 3px solid var(--gold); }
+
+.badge { background: #faf5e8; }
+.fav-btn.active { background: var(--navy); }
+
+.footer-grid h4, .footer strong.footer-title {
+  font-family: Georgia, "Times New Roman", serif;
+}
+.contact-icons a { border-radius: 50%; border-color: var(--gold); color: var(--gold); }
+.contact-icons a:hover { background: var(--gold); color: var(--navy); }

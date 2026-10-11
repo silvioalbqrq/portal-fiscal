@@ -283,6 +283,22 @@
     ]
   },
   {
+    "id": "alienacao-imovel",
+    "nome": "Simulador tributário IBS / CBS — Imóveis",
+    "descricao": "Alienação, locação mensal e hospedagem ≤90 dias — redutores de ajuste/social, alíquotas −50%/−70%/−40% (Dec. 12.955/26 e CGIBS 6).",
+    "url": "https://silvioalbqrq.github.io/alienacao-imovel/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "Imóveis",
+      "Alienação",
+      "Locação",
+      "Hospedagem",
+      "IBS",
+      "CBS"
+    ]
+  },
+  {
     "id": "50-segmentos",
     "nome": "50 Segmentos na Reforma",
     "descricao": "E-book setorial: impacto prático de IBS, CBS e IS em mais de 50 setores, com cronograma e regimes diferenciados.",

@@ -199,6 +199,21 @@
     ]
   },
   {
+    "id": "anexo-viii-cnpj",
+    "nome": "Tabela de Documentos e Orientações — Inscrição, Alteração e Baixa no CNPJ",
+    "descricao": "Anexo VIII da IN RFB 20119/2022 — 85 registros por Natureza Jurídica com data do evento, ato exigido e base legal com link direto ao artigo.",
+    "url": "https://silvioalbqrq.github.io/Anexo-viii-CNPJ/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / CNPJ",
+    "tags": [
+      "CNPJ",
+      "Anexo VIII",
+      "IN RFB",
+      "Natureza Jurídica",
+      "Consulta"
+    ]
+  },
+  {
     "id": "pis-cofins-monofasico-ncm",
     "nome": "PIS/COFINS Monofásico por NCM — Leitor de XML",
     "descricao": "Importa XMLs de NFCe (65) e NFe (55) avulsos, de pasta ou .ZIP, indica item a item se o NCM é monofásico (Tab. 4.3.10 v1.25) e totaliza SIM/NÃO + serviços, com exportação Excel/CSV.",

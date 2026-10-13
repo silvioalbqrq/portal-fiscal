@@ -142,6 +142,22 @@
     ]
   },
   {
+    "id": "icms-ceara-ncm",
+    "nome": "ICMS Ceará por NCM — Consulta e Leitor de XML",
+    "descricao": "Tributação do ICMS-CE por NCM (base SISCOEX + camada de vigência 2026): busca por código/descrição, leitor de XML NF-e/NFC-e (arquivo, pasta, ZIP) com totais ICMS sem ST/ST e ISS manual, e seção Atualizações 2026. 100% local.",
+    "url": "https://silvioalbqrq.github.io/ICMS-Ceara-por-NCM/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "ICMS",
+      "NCM",
+      "ST",
+      "XML",
+      "NF-e",
+      "Ceará"
+    ]
+  },
+  {
     "id": "consulta-cfop",
     "nome": "CFOP — Localizador de Operações",
     "descricao": "Localizador de CFOP (entradas 1·2·3 / saídas 5·6·7, IT 2023.002 v2.10) — 619 registros com filtros de fluxo, UF e natureza, ficha completa e espelho de devolução.",

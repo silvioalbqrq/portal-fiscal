@@ -352,5 +352,22 @@
       "Créditos",
       "Teses"
     ]
+  },
+  {
+    "id": "ajustes-sinief-2026",
+    "nome": "Portal Completo Ajustes SINIEF 01 a 40/2026 — CONFAZ",
+    "descricao": "Portal de estudo dos 40 Ajustes SINIEF de 2026 (Despachos 6, 12, 15, 18, 21, 23, 30, 36 e 42): fichas por ajuste, quiz, cronograma de vigências e links oficiais. NF-e, NFC-e, CT-e, MDF-e, BP-e, NF3e, NFCom, DC-e e PIS/COFINS. 100% local.",
+    "url": "https://silvioalbqrq.github.io/ajustes-sinief-2026/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "SINIEF",
+      "CONFAZ",
+      "NF-e",
+      "NFC-e",
+      "CT-e",
+      "MDF-e",
+      "2026"
+    ]
   }
 ]

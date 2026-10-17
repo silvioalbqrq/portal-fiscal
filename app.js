@@ -24,10 +24,11 @@ const FALLBACK_TOOLS = [
   { id: "50-segmentos", nome: "50 Segmentos na Reforma", descricao: "E-book setorial: impacto prático de IBS, CBS e IS em mais de 50 setores, com cronograma e regimes diferenciados.", url: "https://silvioalbqrq.github.io/50-Segmentos/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["E-book", "Setores", "LC 214/25"] },
   { id: "tributacao-dentista", nome: "Tributação para Dentistas", descricao: "Guia prático: Fator R, equiparação hospitalar, livro-caixa, modelo híbrido CPF+CNPJ e Reforma 2027.", url: "https://silvioalbqrq.github.io/Tributacao-Dentista/", categoria: "simples-iss", categoriaLabel: "ISS / Simples Nacional", tags: ["Odonto", "Lucro Presumido", "Guia"] },
   { id: "60-oportunidades", nome: "60 Oportunidades Tributárias", descricao: "Mapa de teses de redução de carga e recuperação de créditos — PIS/COFINS, ICMS, IRPJ, previdenciário e IBS/CBS.", url: "https://silvioalbqrq.github.io/60-Oportunidades/", categoria: "estrategia", categoriaLabel: "Estratégia / Recuperação", tags: ["Planejamento", "Créditos", "Teses"] },
+  { id: "ajustes-sinief-2026", nome: "Portal Completo Ajustes SINIEF 01 a 40/2026 — CONFAZ", descricao: "Portal de estudo dos 40 Ajustes SINIEF de 2026 (Despachos 6, 12, 15, 18, 21, 23, 30, 36 e 42): fichas por ajuste, quiz, cronograma de vigências e links oficiais. NF-e, NFC-e, CT-e, MDF-e, BP-e, NF3e, NFCom, DC-e e PIS/COFINS. 100% local.", url: "https://silvioalbqrq.github.io/ajustes-sinief-2026/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["SINIEF", "CONFAZ", "NF-e", "NFC-e", "CT-e", "MDF-e", "2026"] },
 ];
 
 const FAV_KEY = "hubfiscal:favoritos:v1";
-const APP_VERSION = "20261006-01";
+const APP_VERSION = "20261016-01";
 // Aliases de IDs renomeados: favorito antigo -> ID atual (migração automática).
 const FAV_ALIASES = {
   "danfe-reforma-nt2026-010": "danfe-reforma-nt2026",

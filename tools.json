@@ -73,6 +73,24 @@
     ]
   },
   {
+    "id": "conferencia-ibs-cbs-ncm",
+    "nome": "Conferência IBS/CBS por NCM",
+    "descricao": "Confere item a item o CST e o cClassTrib de XML de NF-e/NFC-e, planilha, pasta inteira ou .zip/.rar contra a base oficial por NCM, sinaliza divergências, permite escolher a tributação correta e exporta a planilha corrigida — 100% no navegador.",
+    "url": "https://silvioalbqrq.github.io/consulta-tributacao-ncm/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "IBS",
+      "CBS",
+      "NCM",
+      "CST",
+      "cClassTrib",
+      "XML",
+      "NFCe",
+      "Conferência"
+    ]
+  },
+  {
     "id": "fator-r",
     "nome": "Calculadora Fator R & DAS",
     "descricao": "Diagnóstico Anexo III vs. Anexo V, alíquota efetiva e DAS com segregação de ISS retido (Res. CGSN 140/18).",

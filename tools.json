@@ -352,5 +352,22 @@
       "Créditos",
       "Teses"
     ]
+  },
+  {
+    "id": "aliquota-simples",
+    "nome": "Alíquota Simples — NFS-e",
+    "descricao": "Calcula a alíquota efetiva do Simples Nacional para o campo “Valor aproximado dos tributos” da NFS-e. Importa o extrato PGDAS-D ou cálculo manual, por atividade e anexo, com tabelas 2026 e Simples híbrido 2027–2028.",
+    "url": "https://silvioalbqrq.github.io/aliquota-sn/",
+    "categoria": "simples-iss",
+    "categoriaLabel": "ISS / Simples Nacional",
+    "tags": [
+      "Simples",
+      "NFS-e",
+      "Alíquota",
+      "PGDAS-D",
+      "DAS",
+      "Fator R",
+      "Híbrido"
+    ]
   }
 ]

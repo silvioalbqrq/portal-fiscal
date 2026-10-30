@@ -73,6 +73,24 @@
     ]
   },
   {
+    "id": "conferencia-ibs-cbs-ncm",
+    "nome": "Conferência IBS/CBS por NCM",
+    "descricao": "Confere item a item o CST e o cClassTrib de XML de NF-e/NFC-e, planilha, pasta inteira ou .zip/.rar contra a base oficial por NCM, sinaliza divergências, permite escolher a tributação correta e exporta a planilha corrigida — 100% no navegador.",
+    "url": "https://silvioalbqrq.github.io/consulta-tributacao-ncm/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "IBS",
+      "CBS",
+      "NCM",
+      "CST",
+      "cClassTrib",
+      "XML",
+      "NFCe",
+      "Conferência"
+    ]
+  },
+  {
     "id": "fator-r",
     "nome": "Calculadora Fator R & DAS",
     "descricao": "Diagnóstico Anexo III vs. Anexo V, alíquota efetiva e DAS com segregação de ISS retido (Res. CGSN 140/18).",
@@ -355,19 +373,36 @@
   },
   {
     "id": "aliquota-simples",
-    "nome": "Alíquota Simples — NFS-e",
-    "descricao": "Calcula a alíquota efetiva do Simples Nacional para o campo “Valor aproximado dos tributos” da NFS-e. Importa o extrato PGDAS-D ou cálculo manual, por atividade e anexo, com tabelas 2026 e Simples híbrido 2027–2028.",
+    "nome": "Aliquota Simples - NFS-e",
+    "descricao": "Calcula a aliquota efetiva do Simples Nacional para o campo Valor aproximado dos tributos da NFS-e. Importa o extrato PGDAS-D ou calculo manual, por atividade e anexo, com tabelas 2026 e Simples hibrido 2027-2028.",
     "url": "https://silvioalbqrq.github.io/aliquota-sn/",
     "categoria": "simples-iss",
     "categoriaLabel": "ISS / Simples Nacional",
     "tags": [
       "Simples",
       "NFS-e",
-      "Alíquota",
+      "Aliquota",
       "PGDAS-D",
       "DAS",
       "Fator R",
-      "Híbrido"
+      "Hibrido"
+    ]
+  },
+  {
+    "id": "ajustes-sinief-2026",
+    "nome": "Portal Completo Ajustes SINIEF 01 a 40/2026 - CONFAZ",
+    "descricao": "Portal de estudo dos 40 Ajustes SINIEF de 2026: fichas por ajuste, quiz, cronograma de vigencias e links oficiais. NF-e, NFC-e, CT-e, MDF-e, BP-e, NF3e, NFCom, DC-e e PIS/COFINS. 100% local.",
+    "url": "https://silvioalbqrq.github.io/ajustes-sinief-2026/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "SINIEF",
+      "CONFAZ",
+      "NF-e",
+      "NFC-e",
+      "CT-e",
+      "MDF-e",
+      "2026"
     ]
   }
 ]

@@ -404,5 +404,21 @@
       "MDF-e",
       "2026"
     ]
+  },
+  {
+    "id": "importador-nfse",
+    "nome": "Importador de NFS-e",
+    "descricao": "Importa XMLs de notas fiscais de serviços, extrai campos (data emissão, tomador, NFS-e, valores, ISS, INSS, município), detecta status (cancelada, processada, processamento) e apresenta listagem filtrável/exportável com paginação.",
+    "url": "https://silvioalbqrq.github.io/ImportadorNFSe/",
+    "categoria": "simples-iss",
+    "categoriaLabel": "ISS / Simples Nacional",
+    "tags": [
+      "NFS-e",
+      "ISS",
+      "Importação",
+      "XML",
+      "Cancelamento",
+      "Processamento"
+    ]
   }
 ]

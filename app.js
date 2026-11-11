@@ -1,41 +1,9 @@
-/* Hub Fiscal — renderização via tools.json (com fallback local para abrir via file://) */
-const FALLBACK_TOOLS = [
-  { id: "danfe-reforma-nt2026", nome: "DANFE Reforma Tributária (NT 2026.010)", descricao: "XML → DANFE no layout da Reforma: bloco Total IBS/CBS/IS, cClassTrib por item, CRT do emitente e validação da chave, 100% local.", url: "https://silvioalbqrq.github.io/danfe-reforma-nt2026-010/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["DANFE", "NF-e", "IBS", "CBS", "NT 2026.010"] },
-  { id: "analise-xml-ibs-cbs", nome: "Análise XML — IBS e CBS", descricao: "Leitor de XML da NF-e com apuração de vBC, IBS (UF + Município) e CBS, itens por produto e exportação CSV.", url: "https://silvioalbqrq.github.io/AnaliseXML-IBSeCBS/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["Reforma", "XML", "IBS", "CBS", "NF-e"] },
-  { id: "taxreform-das", nome: "IBS/CBS Dentro ou Fora do DAS", descricao: "Simulador do Simples Nacional: RBT12 oficial, cronograma 2026–2033, alíquotas editáveis e parecer B2B.", url: "https://silvioalbqrq.github.io/TaxReform/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["Simples", "DAS", "Híbrido", "CGSN 186/26"] },
-  { id: "lc116-nbs", nome: "LC 116 × NBS — Local do ISS", descricao: "Correlação oficial LC 116/2003 → NBS (Anexo VIII) com local do ISS (art. 3º) e local IBS/CBS.", url: "https://silvioalbqrq.github.io/LC116-NBS/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["ISS", "LC 116", "NBS", "Consulta"] },
-  { id: "cst-cclasstrib", nome: "Consulta CST × cClassTrib (IBS/CBS)", descricao: "Busca única por CST, cClassTrib, NCM/NBS ou descrição do produto — 18 CSTs, 164 classificações e 10.522 NCMs, com filtros, detalhe e exportação CSV/JSON.", url: "https://silvioalbqrq.github.io/cst-cclasstrib/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["CST", "cClassTrib", "NCM", "IBS", "CBS"] },
-  { id: "conferencia-ibs-cbs-ncm", nome: "Conferência IBS/CBS por NCM", descricao: "Confere item a item o CST e o cClassTrib de XML de NF-e/NFC-e, planilha, pasta inteira ou .zip/.rar contra a base oficial por NCM, sinaliza divergências, permite escolher a tributação correta e exporta a planilha corrigida — 100% no navegador.", url: "https://silvioalbqrq.github.io/consulta-tributacao-ncm/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["IBS", "CBS", "NCM", "CST", "cClassTrib", "XML", "NFCe", "Conferência"] },
-  { id: "fator-r", nome: "Calculadora Fator R & DAS", descricao: "Diagnóstico Anexo III vs. Anexo V, alíquota efetiva e DAS com segregação de ISS retido (Res. CGSN 140/18).", url: "https://silvioalbqrq.github.io/fator-r/", categoria: "simples-iss", categoriaLabel: "ISS / Simples Nacional", tags: ["Fator R", "Simples", "Anexo III", "Anexo V"] },
-  { id: "iss-fixo", nome: "Portal do ISS Fixo", descricao: "Elegibilidade e economia para sociedades uniprofissionais — Fortaleza e Canindé/CE (DL 406/68, STF Tema 918).", url: "https://silvioalbqrq.github.io/iss-fixo/", categoria: "simples-iss", categoriaLabel: "ISS / Simples Nacional", tags: ["ISS Fixo", "Municipal", "Sociedades"] },
-  { id: "consulta-cest", nome: "Consulta CEST & NCM", descricao: "Localiza o CEST a partir da NCM ou descrição — 1.032 registros dos Anexos II a XXVI do Convênio ICMS 142/18, até Conv. 95/24, com exportação CSV.", url: "https://silvioalbqrq.github.io/consulta-cest/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["CEST", "NCM", "ST", "Convênio 142/18"] },
-  { id: "consulta-cnae", nome: "Consulta CNAE — Simples Nacional", descricao: "Dashboard de enquadramento no Simples por CNAE (Subclasses IBGE 2.3, LC 123/06) — optante, ambíguo com Fator R, vedado e MEI, com análise de cartão CNPJ e simulador de alíquota efetiva.", url: "https://silvioalbqrq.github.io/consulta-cnae/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["CNAE", "Simples", "Fator R", "MEI"] },
-  { id: "consulta-ncm", nome: "Consulta NCM × TIPI", descricao: "Painel NCM × TIPI (Decreto 11.158/2022 até ADE RFB 001/2026) — 15.653 linhas, busca por código/descrição, filtro por alíquota, EX e NT, com exportação CSV, 100% local.", url: "https://silvioalbqrq.github.io/consulta-ncm/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["NCM", "TIPI", "IPI", "Tabela"] },
-  { id: "icms-ceara-ncm", nome: "ICMS Ceará por NCM — Consulta e Leitor de XML", descricao: "Tributação do ICMS-CE por NCM (base SISCOEX + camada de vigência 2026): busca por código/descrição, leitor de XML NF-e/NFC-e (arquivo, pasta, ZIP) com totais ICMS sem ST/ST e ISS manual, e seção Atualizações 2026. 100% local.", url: "https://silvioalbqrq.github.io/ICMS-Ceara-por-NCM/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["ICMS", "NCM", "ST", "XML", "NF-e", "Ceará"] },
-  { id: "consulta-cfop", nome: "CFOP — Localizador de Operações", descricao: "Localizador de CFOP (entradas 1·2·3 / saídas 5·6·7, IT 2023.002 v2.10) — 619 registros com filtros de fluxo, UF e natureza, ficha completa e espelho de devolução.", url: "https://silvioalbqrq.github.io/consulta-cfop/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["CFOP", "NF-e", "Operações"] },
-  { id: "sitram-consulta-nfe", nome: "SITRAM — Consulta NFe Interestadual", descricao: "Consulta em lote por chave de acesso (44 dígitos) no SITRAM/SEFAZ-CE — situação paga, a pagar, sem cobrança ou não selada, com CSV/TXT, painel de totais e exportação CSV.", url: "https://silvioalbqrq.github.io/sitram-consulta-nfe/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["SITRAM", "SEFAZ-CE", "NF-e", "Chave de acesso"] },
-  { id: "central-dfe", nome: "Central DFe — Baixar XML NF-e", descricao: "Central multi-empresa: baixa XML da SEFAZ por chave, lote ou planilha xlsx/csv/txt, importa XMLs de pasta/zip e exporta DANFE e Excel.", url: "https://silvioalbqrq.github.io/baixar-xml-nfe/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["NF-e", "XML", "SEFAZ", "Chave de acesso", "DANFE"] },
-  { id: "identificador-crt", nome: "Identificador de Regime — CRT", descricao: "Lê a tag CRT do XML da NF-e/NFC-e e identifica Simples, excesso sublimite, Presumido, Real e MEI, com totais e CSV.", url: "https://silvioalbqrq.github.io/identificador-regime-crt/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["CRT", "XML", "Simples", "Presumido", "MEI"] },
-  { id: "anexo-viii-cnpj", nome: "Tabela de Documentos e Orientações — Inscrição, Alteração e Baixa no CNPJ", descricao: "Anexo VIII da IN RFB 20119/2022 — 85 registros por Natureza Jurídica com data do evento, ato exigido e base legal com link direto ao artigo.", url: "https://silvioalbqrq.github.io/Anexo-viii-CNPJ/", categoria: "consultas", categoriaLabel: "Consultas / CNPJ", tags: ["CNPJ", "Anexo VIII", "IN RFB", "Natureza Jurídica", "Consulta"] },
-  { id: "pis-cofins-monofasico-ncm", nome: "PIS/COFINS Monofásico por NCM — Leitor de XML", descricao: "Importa XMLs de NFCe (65) e NFe (55) avulsos, de pasta ou .ZIP, indica item a item se o NCM é monofásico (Tab. 4.3.10 v1.25) e totaliza SIM/NÃO + serviços, com exportação Excel/CSV.", url: "https://silvioalbqrq.github.io/PIS-COFINS-Monofasico-por-NCM/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["PIS", "COFINS", "Monofásico", "NCM", "XML", "NFCe"] },
-  { id: "conversor-xml-excel", nome: "Conversor XML → Excel", descricao: "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.", url: "https://silvioalbqrq.github.io/conversorXML-Excel/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["XML", "Excel", "NFe", "NFCe"] },
-  { id: "docconvert", nome: "DocConvert — PDF/A & Compressor", descricao: "Imagem → PDF/A, compressão real de PDF e mesclagem com metadados. Tudo 100% no navegador.", url: "https://silvioalbqrq.github.io/DocConvert/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["PDF", "PDF/A", "Arquivo"] },
-  { id: "converter-md", nome: "Conversor para Markdown", descricao: "Converte PDF, DOCX, XLSX e HTML em .md limpo para LLMs e documentação (ponte para app Streamlit).", url: "https://silvioalbqrq.github.io/converter-md/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["Markdown", "Documentos", "IA"] },
-  { id: "conversor-csv-excel", nome: "Conversor CSV ↔ Excel Pro", descricao: "Converte CSV → Excel e Excel → CSV 100% no navegador, com preview, estatísticas e limite de 100 MB.", url: "https://silvioalbqrq.github.io/converter-csv-excel/", categoria: "conversores", categoriaLabel: "Conversores / Utilidades", tags: ["CSV", "Excel", "Conversor"] },
-  { id: "alienacao-imovel", nome: "Simulador tributário IBS / CBS — Imóveis", descricao: "Alienação, locação mensal e hospedagem ≤90 dias — redutores de ajuste/social, alíquotas −50%/−70%/−40% (Dec. 12.955/26 e CGIBS 6).", url: "https://silvioalbqrq.github.io/alienacao-imovel/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["Imóveis", "Alienação", "Locação", "Hospedagem", "IBS", "CBS"] },
-  { id: "50-segmentos", nome: "50 Segmentos na Reforma", descricao: "E-book setorial: impacto prático de IBS, CBS e IS em mais de 50 setores, com cronograma e regimes diferenciados.", url: "https://silvioalbqrq.github.io/50-Segmentos/", categoria: "reforma", categoriaLabel: "Reforma / IBS-CBS", tags: ["E-book", "Setores", "LC 214/25"] },
-  { id: "tributacao-dentista", nome: "Tributação para Dentistas", descricao: "Guia prático: Fator R, equiparação hospitalar, livro-caixa, modelo híbrido CPF+CNPJ e Reforma 2027.", url: "https://silvioalbqrq.github.io/Tributacao-Dentista/", categoria: "simples-iss", categoriaLabel: "ISS / Simples Nacional", tags: ["Odonto", "Lucro Presumido", "Guia"] },
-  { id: "60-oportunidades", nome: "60 Oportunidades Tributárias", descricao: "Mapa de teses de redução de carga e recuperação de créditos — PIS/COFINS, ICMS, IRPJ, previdenciário e IBS/CBS.", url: "https://silvioalbqrq.github.io/60-Oportunidades/", categoria: "estrategia", categoriaLabel: "Estratégia / Recuperação", tags: ["Planejamento", "Créditos", "Teses"] },
-  { id: "ajustes-sinief-2026", nome: "Portal Completo Ajustes SINIEF 01 a 40/2026 — CONFAZ", descricao: "Portal de estudo dos 40 Ajustes SINIEF de 2026 (Despachos 6, 12, 15, 18, 21, 23, 30, 36 e 42): fichas por ajuste, quiz, cronograma de vigências e links oficiais. NF-e, NFC-e, CT-e, MDF-e, BP-e, NF3e, NFCom, DC-e e PIS/COFINS. 100% local.", url: "https://silvioalbqrq.github.io/ajustes-sinief-2026/", categoria: "consultas", categoriaLabel: "Consultas / ICMS", tags: ["SINIEF", "CONFAZ", "NF-e", "NFC-e", "CT-e", "MDF-e", "2026"] },
-];
-
 const FAV_KEY = "hubfiscal:favoritos:v1";
 // Aliases de IDs renomeados: favorito antigo -> ID atual (migração automática).
 const FAV_ALIASES = {
   "danfe-reforma-nt2026-010": "danfe-reforma-nt2026",
 };
 const ALLOWED_ORIGIN = "https://silvioalbqrq.github.io";
-const ALLOWED_CATEGORIAS = ["reforma", "consultas", "simples-iss", "conversores", "estrategia"];
 
 function isUrlSegura(url) {
   try {
@@ -51,7 +19,7 @@ function validarFerramenta(t) {
   if (typeof t.id !== "string" || !t.id.trim()) return false;
   if (typeof t.nome !== "string" || !t.nome.trim()) return false;
   if (typeof t.url !== "string" || !isUrlSegura(t.url)) return false;
-  if (typeof t.categoria !== "string" || !ALLOWED_CATEGORIAS.includes(t.categoria)) return false;
+  if (typeof t.categoria !== "string" || !t.categoria.trim()) return false;
   if (t.tags !== undefined && !Array.isArray(t.tags)) return false;
   return true;
 }
@@ -82,11 +50,10 @@ function debounce(fn, ms) {
   };
 }
 
-let ultimoFocoAntesViewer = null;
-
 let TOOLS = [];
 let filtroAtual = "todos";
 let favoritos = new Set();
+let falhouCarga = false;
 
 const grid = document.getElementById("grid");
 const empty = document.getElementById("empty");
@@ -119,11 +86,23 @@ function salvarFavoritos() {
   }
 }
 
-function alternarFavorito(id) {
-  if (favoritos.has(id)) favoritos.delete(id);
-  else favoritos.add(id);
+function alternarFavorito(tool, botao) {
+  const fav = !favoritos.has(tool.id);
+  if (fav) favoritos.add(tool.id);
+  else favoritos.delete(tool.id);
   salvarFavoritos();
-  render();
+  // Reordenar no mesmo clique move o card sob o cursor; a ordem nova aparece no próximo carregamento.
+  botao.classList.toggle("active", fav);
+  botao.setAttribute("aria-pressed", fav ? "true" : "false");
+  botao.setAttribute("aria-label", (fav ? "Remover dos favoritos: " : "Favoritar: ") + tool.nome);
+  botao.setAttribute("title", fav ? "Remover dos favoritos" : "Favoritar ferramenta");
+  atualizarContadorFavoritos();
+  if (filtroAtual === "favoritos") render();
+}
+
+function atualizarContadorFavoritos() {
+  const el = document.getElementById("count-fav");
+  if (el) el.textContent = contarFavoritosValidos();
 }
 
 function contarFavoritosValidos() {
@@ -135,24 +114,17 @@ function contarFavoritosValidos() {
 }
 
 function sincronizarFavoritos() {
-  if (!TOOLS.length) return;
-  const ids = new Set(TOOLS.map((t) => t.id));
+  // Só migra aliases; nunca descarta id desconhecido (tools.json pode falhar ou mudar).
   let mudou = false;
-  const sincronizados = new Set();
+  const migrados = new Set();
   favoritos.forEach((id) => {
     const atual = FAV_ALIASES[id] || id;
     if (atual !== id) mudou = true;
-    if (ids.has(atual)) {
-      sincronizados.add(atual);
-    } else {
-      mudou = true;
-      console.warn("[Hub Fiscal] favorito descartado (id inexistente):", id);
-    }
+    migrados.add(atual);
   });
-  if (mudou) {
-    favoritos = sincronizados;
-    salvarFavoritos();
-  }
+  if (!mudou) return;
+  favoritos = migrados;
+  salvarFavoritos();
 }
 
 async function carregarFerramentas() {
@@ -166,9 +138,9 @@ async function carregarFerramentas() {
     if (limpa.length === 0) throw new Error("JSON vazio ou inválido");
     TOOLS = limpa;
   } catch (e) {
-    console.warn("[Hub Fiscal] usando FALLBACK_TOOLS:", e && e.message);
-    // Fallback: permite abrir o index.html com duplo clique (file://) sem servidor
-    TOOLS = sanitizarLista(FALLBACK_TOOLS);
+    console.warn("[Hub Fiscal] tools.json indisponível:", e && e.message);
+    falhouCarga = true;
+    TOOLS = [];
   }
   sincronizarFavoritos();
   atualizarContadores();
@@ -186,14 +158,6 @@ function atualizarContadores() {
   setText("hero-total", total);
   setText("repo-count", total);
   setText("next-site", total + 1);
-  const heroTitle = document.getElementById("hero-title");
-  if (heroTitle && !document.getElementById("hero-total")) {
-    heroTitle.textContent = "As " + total + " ferramentas fiscais em um só portal corporativo";
-  }
-  const meta = document.querySelector('meta[name="description"]');
-  if (meta) {
-    meta.setAttribute("content", meta.getAttribute("content").replace(/\d+ ferramentas/, total + " ferramentas"));
-  }
 }
 
 function normalizar(s) {
@@ -245,7 +209,7 @@ function render() {
     favBtn.setAttribute("aria-pressed", fav ? "true" : "false");
     favBtn.setAttribute("aria-label", (fav ? "Remover dos favoritos: " : "Favoritar: ") + t.nome);
     favBtn.setAttribute("title", fav ? "Remover dos favoritos" : "Favoritar ferramenta");
-    favBtn.addEventListener("click", () => alternarFavorito(t.id));
+    favBtn.addEventListener("click", () => alternarFavorito(t, favBtn));
     const ext = card.querySelector("[data-ext]");
     ext.href = t.url;
     ext.setAttribute("rel", "noopener noreferrer");
@@ -256,13 +220,12 @@ function render() {
   });
   const exibidos = grid.children.length;
   empty.hidden = exibidos > 0;
-  if (filtroAtual === "favoritos" && exibidos === 0 && !busca.value.trim()) {
-    empty.querySelector("p").textContent = "Você ainda não favoritou nenhuma ferramenta. Toque na estrela ★ de um card para fixá-lo aqui.";
-  } else {
-    empty.querySelector("p").textContent = "Ajuste a busca ou o filtro de categoria.";
-  }
-  const favCount = document.getElementById("count-fav");
-  if (favCount) favCount.textContent = contarFavoritosValidos();
+  empty.querySelector("p").textContent = falhouCarga
+    ? "Não foi possível carregar a lista de ferramentas. Verifique a conexão e recarregue a página."
+    : filtroAtual === "favoritos" && !busca.value.trim()
+      ? "Você ainda não favoritou nenhuma ferramenta. Toque na estrela ★ de um card para fixá-lo aqui."
+      : "Ajuste a busca ou o filtro de categoria.";
+  atualizarContadorFavoritos();
   resultadoInfo.textContent = "Exibindo " + exibidos + " de " + TOOLS.length + " ferramentas.";
 }
 
@@ -271,7 +234,6 @@ function abrirViewer(tool) {
     console.warn("[Hub Fiscal] URL bloqueada:", tool && tool.url);
     return;
   }
-  ultimoFocoAntesViewer = document.activeElement;
   viewerTitle.textContent = tool.nome;
   viewerUrl.textContent = tool.url;
   viewerOpen.href = tool.url;
@@ -279,25 +241,25 @@ function abrirViewer(tool) {
   viewerLoading.style.display = "grid";
   viewerLoading.textContent = "Carregando " + tool.nome + "…";
   viewerFrame.src = tool.url;
-  viewer.hidden = false;
   document.body.style.overflow = "hidden";
+  // <dialog> modal já prende o foco, responde ao Esc e deixa o fundo inerte.
+  viewer.showModal();
   document.getElementById("viewer-close").focus();
 }
 
 function fecharViewer() {
-  viewer.hidden = true;
-  viewerFrame.removeAttribute("src");
-  viewerFrame.src = "";
+  if (viewer.open) viewer.close();
+  // Limpeza síncrona: o evento "close" do <dialog> não dispara em toda build do Chromium.
+  viewerFrame.src = "about:blank"; // descarrega a ferramenta; src="" faria o iframe carregar o próprio Hub
   document.body.style.overflow = "";
-  if (ultimoFocoAntesViewer && typeof ultimoFocoAntesViewer.focus === "function") {
-    ultimoFocoAntesViewer.focus();
-  }
 }
 
 viewerFrame.addEventListener("load", () => {
   viewerLoading.style.display = "none";
 });
 document.getElementById("viewer-close").addEventListener("click", fecharViewer);
+viewer.addEventListener("cancel", fecharViewer); // Esc
+viewer.addEventListener("close", fecharViewer);
 document.getElementById("viewer-reload").addEventListener("click", () => {
   try {
     viewerLoading.style.display = "grid";
@@ -307,12 +269,6 @@ document.getElementById("viewer-reload").addEventListener("click", () => {
     console.warn("[Hub Fiscal] reload via src:", e && e.message);
     viewerFrame.src = viewerOpen.href;
   }
-});
-viewer.addEventListener("click", (e) => {
-  if (e.target === viewer) fecharViewer();
-});
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !viewer.hidden) fecharViewer();
 });
 
 document.querySelectorAll(".chip").forEach((chip) => {

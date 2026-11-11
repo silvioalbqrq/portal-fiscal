@@ -154,6 +154,21 @@
     ]
   },
   {
+    "id": "situacao-adn",
+    "nome": "SituaçãoADN — XML de NFS-e em lote",
+    "descricao": "Troca a tag SituacaoAdn de Em Processamento para Processado com Sucesso nos XMLs de NFS-e — pasta, XMLs soltos, .zip ou .rar — e devolve um ZIP com os arquivos corrigidos e o backup dos originais, 100% no navegador.",
+    "url": "https://silvioalbqrq.github.io/alterar-situacao-adn/",
+    "categoria": "simples-iss",
+    "categoriaLabel": "ISS / Simples Nacional",
+    "tags": [
+      "NFS-e",
+      "XML",
+      "SituacaoAdn",
+      "Processamento",
+      "Lote"
+    ]
+  },
+  {
     "id": "iss-fixo",
     "nome": "Portal do ISS Fixo",
     "descricao": "Elegibilidade e economia para sociedades uniprofissionais — Fortaleza e Canindé/CE (DL 406/68, STF Tema 918).",

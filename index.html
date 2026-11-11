@@ -6,85 +6,99 @@
   <title>Hub Fiscal — Canivete Suíço da Área Fiscal</title>
   <meta name="description" content="Hub Fiscal: portal corporativo que reúne ferramentas fiscais e tributárias — Reforma IBS/CBS, ICMS/CEST, Simples Nacional, ISS e conversores. Atualização automática via GitHub Pages." />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-src https://silvioalbqrq.github.io; connect-src 'self'; object-src 'none'; base-uri 'self'" />
-  <link rel="stylesheet" href="styles.css?v=20261111-06" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F2A44'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='bold' fill='white' text-anchor='middle'%3EHF%3C/text%3E%3C/svg%3E" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://silvioalbqrq.github.io; connect-src 'self'; object-src 'none'; base-uri 'self'" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20261111-07" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1f3a'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='2'%3E%3Crect x='7' y='7' width='7' height='7' rx='1.5'/%3E%3Crect x='18' y='7' width='7' height='7' rx='1.5'/%3E%3Crect x='7' y='18' width='7' height='7' rx='1.5'/%3E%3C/g%3E%3Crect x='18' y='18' width='7' height='7' rx='1.5' fill='%2334d399'/%3E%3C/svg%3E" />
 </head>
 <body>
   <a class="skip-link" href="#ferramentas">Pular para ferramentas</a>
 
   <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true">HF</span>
-        <div>
-          <strong>Hub Fiscal</strong>
-          <small>VMF Contabilidade</small>
-        </div>
-      </div>
-      <nav class="topnav" aria-label="Navegação principal">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#topo">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="6" y="6" width="8" height="8" rx="1.8" />
+            <rect x="18" y="6" width="8" height="8" rx="1.8" />
+            <rect x="6" y="18" width="8" height="8" rx="1.8" />
+            <rect class="hl" x="18" y="18" width="8" height="8" rx="1.8" />
+          </svg>
+        </span>
+        <span class="brand-text">Hub<strong>Fiscal</strong></span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
         <a href="#ferramentas">Ferramentas</a>
         <a href="#como-funciona">Como atualiza</a>
-        <a class="btn btn-outline" href="https://github.com/silvioalbqrq" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/silvioalbqrq" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="topo">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">VMF Contabilidade</p>
-          <h1 id="hero-title">Hub Fiscal <span>IBS / CBS · NCM · NBS</span></h1>
-          <p class="lede">
-            As <strong><span id="hero-total">…</span> ferramentas fiscais</strong> em um só portal corporativo.
-            Simuladores de IBS/CBS, ISS, Fator R e conversores de documentos.
-            O Hub não duplica código: cada card abre a versão <strong>ao vivo</strong> do GitHub Pages.
-            Atualizou o repositório original, atualizou aqui.
-          </p>
-          <div class="pills"><span class="pill">Fonte: <b>GitHub Pages</b></span><span class="pill">Reforma <b>IBS/CBS</b></span><span class="pill">LC <b>214/2025</b></span></div>
-          <div class="search-row">
-            <label class="search-box">
-              <span class="visually-hidden">Buscar ferramenta</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <input id="busca" type="search" placeholder="Buscar por nome, tag ou uso… (ex: XML, ISS, DAS)" autocomplete="off" />
-            </label>
-          </div>
-          <div class="filters" role="group" aria-label="Filtrar por categoria">
-            <button class="chip active" data-filter="todos" aria-pressed="true">Todos <span id="count-todos">…</span></button>
-            <button class="chip chip-fav" data-filter="favoritos" aria-pressed="false">Favoritos <span id="count-fav">0</span></button>
-            <button class="chip" data-filter="reforma" aria-pressed="false">Reforma / IBS-CBS</button>
-            <button class="chip" data-filter="consultas" aria-pressed="false">Consultas</button>
-            <button class="chip" data-filter="simples-iss" aria-pressed="false">ISS / Simples</button>
-            <button class="chip" data-filter="conversores" aria-pressed="false">Conversores</button>
-            <button class="chip" data-filter="estrategia" aria-pressed="false">Estratégia</button>
-          </div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Ferramentas fiscais</p>
+        <h1>Hub Fiscal: <span>todas as ferramentas fiscais em um só portal</span></h1>
+        <p class="hero-sub">
+          Simuladores de IBS/CBS, ISS e Fator R, consultas e conversores.
+          São <strong><span id="hero-total">…</span> ferramentas</strong> que abrem a versão
+          <strong>ao vivo</strong> do GitHub Pages — o Hub não duplica código: atualizou o
+          repositório original, atualizou aqui.
+        </p>
+        <div class="hero-stats">
+          <div><strong id="stat-total">…</strong><span>ferramentas ativas</span></div>
+          <div><strong>100%</strong><span>client-side, sem servidor</span></div>
+          <div><strong>Auto</strong><span>sincronia com o Pages</span></div>
         </div>
-        <aside class="hero-card" aria-label="Resumo do portal">
-          <div class="hero-stat"><strong id="stat-total">…</strong><span>ferramentas ativas</span></div>
-          <div class="hero-stat"><strong>100%</strong><span>client-side, sem servidor</span></div>
-          <div class="hero-stat"><strong>Auto</strong><span>sincronia com o Pages</span></div>
-          <p class="hero-note">Hospede este Hub como <code>portal-fiscal</code> no GitHub Pages: <code>silvioalbqrq.github.io/portal-fiscal/</code></p>
-        </aside>
       </div>
     </section>
 
-    <section id="ferramentas" class="container section">
-      <div class="section-head">
-        <h2>Ferramentas</h2>
-        <p id="resultado-info" aria-live="polite">Carregando ferramentas…</p>
+    <section id="ferramentas" class="wrap panel painel-busca">
+      <div class="painel-head">
+        <div>
+          <p class="eyebrow azul">Catálogo</p>
+          <h2>Ferramentas</h2>
+        </div>
+        <p id="resultado-info" class="painel-sub" aria-live="polite">Carregando ferramentas…</p>
       </div>
+      <div class="filtros">
+        <div class="campo busca">
+          <label for="busca">Buscar</label>
+          <input id="busca" type="search" placeholder="Nome, tag ou uso… (ex: XML, ISS, DAS)" autocomplete="off" />
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar por categoria">
+          <button class="chip active" data-filter="todos" aria-pressed="true">Todos <span id="count-todos">…</span></button>
+          <button class="chip chip-fav" data-filter="favoritos" aria-pressed="false">Favoritos <span id="count-fav">0</span></button>
+          <button class="chip" data-filter="reforma" aria-pressed="false">Reforma / IBS-CBS</button>
+          <button class="chip" data-filter="consultas" aria-pressed="false">Consultas</button>
+          <button class="chip" data-filter="simples-iss" aria-pressed="false">ISS / Simples</button>
+          <button class="chip" data-filter="conversores" aria-pressed="false">Conversores</button>
+          <button class="chip" data-filter="estrategia" aria-pressed="false">Estratégia</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-label="Lista de ferramentas">
       <div id="grid" class="grid"></div>
       <noscript><div class="empty"><h3>Ative o JavaScript</h3><p>Este portal carrega as ferramentas via <code>tools.json</code> no navegador. Sem JavaScript, acesse os repositórios em <a href="https://github.com/silvioalbqrq">github.com/silvioalbqrq</a>.</p></div></noscript>
       <div id="empty" class="empty" hidden>
         <h3>Nenhuma ferramenta encontrada</h3>
         <p>Ajuste a busca ou o filtro de categoria.</p>
-        <button id="limpar" class="btn btn-secondary">Limpar busca</button>
+        <button id="limpar" class="btn btn-soft">Limpar busca</button>
       </div>
     </section>
 
-    <section id="como-funciona" class="container section">
-      <h2>Por que o Hub atualiza sozinho?</h2>
+    <section id="como-funciona" class="wrap section section-como">
+      <div class="painel-head">
+        <div>
+          <p class="eyebrow azul">Sincronia</p>
+          <h2>Por que o Hub atualiza sozinho?</h2>
+        </div>
+        <p class="painel-sub">Hospedado como <code>portal-fiscal</code> no GitHub Pages.</p>
+      </div>
       <div class="steps">
         <article>
           <span class="step-num">1</span>
@@ -106,9 +120,9 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-grid">
+    <div class="wrap footer-grid">
       <div>
-        <strong>Hub Fiscal</strong>
+        <span class="brand-text small">Hub<strong>Fiscal</strong></span>
         <p>Portal educacional e informativo. Não substitui parecer técnico, consulta formal ou assessoria contábil/jurídica.</p>
       </div>
       <div>
@@ -120,12 +134,12 @@
         </div>
       </div>
       <div>
-        <strong>Doações</strong>
+        <strong>Apoio</strong>
         <p>Pix: <code class="donate-code" id="pix-chave" data-full="8eea81fc-cb40-4150-91fa-6ca829ada37f" title="8eea81fc-cb40-4150-91fa-6ca829ada37f">8eea81fc…da37f</code> <button class="btn btn-outline btn-sm" data-copy="pix-chave" data-copy-full="1" type="button">Copiar</button><br /><small><a href="#" data-reveal="pix-chave" class="reveal-link">ver chave completa</a></small></p>
         <p>Lightning: <code class="donate-code" id="ln-address" data-full="lnbc1p4tt3ccpp5fntekr0ya4r4zd6durklrznte0zsg5jv3zcv83sss4u4efd8d7gsdqqcqzzsxqrrsssp5xg8m0ydtzqprnym2ruqp4260au726czc86p5y2mpl575mp8avdcs9qxpqysgqsjawffjrlkwpa77wf9zvsjx99z833h0dvjqjh0nxqph75rrkghrhzrfwdhj0fqt57l0nwl69c2sgutmm40mgzhkmqy9dpzcje69u09qpaewhvg" title="Invoice única — clique em copiar">lnbc1p4…paewhvg (invoice única)</code> <button class="btn btn-outline btn-sm" data-copy="ln-address" data-copy-full="1" type="button">Copiar</button><br /><small><a href="#" data-reveal="ln-address" class="reveal-link">ver invoice completa</a></small></p>
       </div>
     </div>
-    <div class="container footer-base"><small>© 2026 Hub Fiscal · Bases: EC 132/2023, LC 214/2025, LC 123/2006</small></div>
+    <div class="wrap footer-base"><small>© 2026 Hub Fiscal · Bases: EC 132/2023, LC 214/2025, LC 123/2006</small></div>
   </footer>
 
   <!-- Visualizador interno (iframe) -->
@@ -136,9 +150,9 @@
         <small id="viewer-url"></small>
       </div>
       <div class="viewer-actions">
-        <button id="viewer-reload" class="btn btn-outline btn-sm">Recarregar</button>
+        <button id="viewer-reload" class="btn btn-soft btn-sm">Recarregar</button>
         <a id="viewer-open" class="btn btn-primary btn-sm" href="#" target="_blank" rel="noopener noreferrer">Nova aba</a>
-        <button id="viewer-close" class="btn btn-secondary btn-sm">Fechar ✕</button>
+        <button id="viewer-close" class="btn btn-danger btn-sm">Fechar ✕</button>
       </div>
     </div>
     <div class="viewer-body">
@@ -148,6 +162,6 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=20261111-06"></script>
+  <script src="app.js?v=20261111-07"></script>
 </body>
 </html>

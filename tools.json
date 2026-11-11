@@ -30,49 +30,6 @@
     ]
   },
   {
-    "id": "taxreform-das",
-    "nome": "IBS/CBS Dentro ou Fora do DAS",
-    "descricao": "Simulador do Simples Nacional: RBT12 oficial, cronograma 2026–2033, alíquotas editáveis e parecer B2B.",
-    "url": "https://silvioalbqrq.github.io/TaxReform/",
-    "categoria": "reforma",
-    "categoriaLabel": "Reforma / IBS-CBS",
-    "tags": [
-      "Simples",
-      "DAS",
-      "Híbrido",
-      "CGSN 186/26"
-    ]
-  },
-  {
-    "id": "lc116-nbs",
-    "nome": "LC 116 × NBS — Local do ISS",
-    "descricao": "Correlação oficial LC 116/2003 → NBS (Anexo VIII) com local do ISS (art. 3º) e local IBS/CBS.",
-    "url": "https://silvioalbqrq.github.io/LC116-NBS/",
-    "categoria": "reforma",
-    "categoriaLabel": "Reforma / IBS-CBS",
-    "tags": [
-      "ISS",
-      "LC 116",
-      "NBS",
-      "Consulta"
-    ]
-  },
-  {
-    "id": "cst-cclasstrib",
-    "nome": "Consulta CST × cClassTrib (IBS/CBS)",
-    "descricao": "Busca única por CST, cClassTrib, NCM/NBS ou descrição do produto — 18 CSTs, 164 classificações e 10.522 NCMs, com filtros, detalhe e exportação CSV/JSON.",
-    "url": "https://silvioalbqrq.github.io/cst-cclasstrib/",
-    "categoria": "reforma",
-    "categoriaLabel": "Reforma / IBS-CBS",
-    "tags": [
-      "CST",
-      "cClassTrib",
-      "NCM",
-      "IBS",
-      "CBS"
-    ]
-  },
-  {
     "id": "conferencia-ibs-cbs-ncm",
     "nome": "Conferência IBS/CBS por NCM",
     "descricao": "Confere item a item o CST e o cClassTrib de XML de NF-e/NFC-e, planilha, pasta inteira ou .zip/.rar contra a base oficial por NCM, sinaliza divergências, permite escolher a tributação correta e exporta a planilha corrigida — 100% no navegador.",
@@ -91,6 +48,65 @@
     ]
   },
   {
+    "id": "cst-cclasstrib",
+    "nome": "Consulta CST × cClassTrib (IBS/CBS)",
+    "descricao": "Busca única por CST, cClassTrib, NCM/NBS ou descrição do produto — 18 CSTs, 164 classificações e 10.522 NCMs, com filtros, detalhe e exportação CSV/JSON.",
+    "url": "https://silvioalbqrq.github.io/cst-cclasstrib/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "CST",
+      "cClassTrib",
+      "NCM",
+      "IBS",
+      "CBS"
+    ]
+  },
+  {
+    "id": "lc116-nbs",
+    "nome": "LC 116 × NBS — Local do ISS",
+    "descricao": "Correlação oficial LC 116/2003 → NBS (Anexo VIII) com local do ISS (art. 3º) e local IBS/CBS.",
+    "url": "https://silvioalbqrq.github.io/LC116-NBS/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "ISS",
+      "LC 116",
+      "NBS",
+      "Consulta"
+    ]
+  },
+  {
+    "id": "alienacao-imovel",
+    "nome": "Simulador tributário IBS / CBS — Imóveis",
+    "descricao": "Alienação, locação mensal e hospedagem ≤90 dias — redutores de ajuste/social, alíquotas −50%/−70%/−40% (Dec. 12.955/26 e CGIBS 6).",
+    "url": "https://silvioalbqrq.github.io/alienacao-imovel/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "Imóveis",
+      "Alienação",
+      "Locação",
+      "Hospedagem",
+      "IBS",
+      "CBS"
+    ]
+  },
+  {
+    "id": "taxreform-das",
+    "nome": "IBS/CBS Dentro ou Fora do DAS",
+    "descricao": "Simulador do Simples Nacional: RBT12 oficial, cronograma 2026–2033, alíquotas editáveis e parecer B2B.",
+    "url": "https://silvioalbqrq.github.io/TaxReform/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "Simples",
+      "DAS",
+      "Híbrido",
+      "CGSN 186/26"
+    ]
+  },
+  {
     "id": "fator-r",
     "nome": "Calculadora Fator R & DAS",
     "descricao": "Diagnóstico Anexo III vs. Anexo V, alíquota efetiva e DAS com segregação de ISS retido (Res. CGSN 140/18).",
@@ -102,6 +118,39 @@
       "Simples",
       "Anexo III",
       "Anexo V"
+    ]
+  },
+  {
+    "id": "aliquota-simples",
+    "nome": "Aliquota Simples - NFS-e",
+    "descricao": "Calcula a aliquota efetiva do Simples Nacional para o campo Valor aproximado dos tributos da NFS-e. Importa o extrato PGDAS-D ou calculo manual, por atividade e anexo, com tabelas 2026 e Simples hibrido 2027-2028.",
+    "url": "https://silvioalbqrq.github.io/aliquota-sn/",
+    "categoria": "simples-iss",
+    "categoriaLabel": "ISS / Simples Nacional",
+    "tags": [
+      "Simples",
+      "NFS-e",
+      "Aliquota",
+      "PGDAS-D",
+      "DAS",
+      "Fator R",
+      "Hibrido"
+    ]
+  },
+  {
+    "id": "importador-nfse",
+    "nome": "Importador de NFS-e",
+    "descricao": "Importa XMLs de notas fiscais de serviços, extrai campos (data emissão, tomador, NFS-e, valores, ISS, INSS, município), detecta status (cancelada, processada, processamento) e apresenta listagem filtrável/exportável com paginação.",
+    "url": "https://silvioalbqrq.github.io/ImportadorNFSe/",
+    "categoria": "simples-iss",
+    "categoriaLabel": "ISS / Simples Nacional",
+    "tags": [
+      "NFS-e",
+      "ISS",
+      "Importação",
+      "XML",
+      "Cancelamento",
+      "Processamento"
     ]
   },
   {
@@ -118,48 +167,6 @@
     ]
   },
   {
-    "id": "consulta-cest",
-    "nome": "Consulta CEST & NCM",
-    "descricao": "Localiza o CEST a partir da NCM ou descrição — 1.032 registros dos Anexos II a XXVI do Convênio ICMS 142/18, até Conv. 95/24, com exportação CSV.",
-    "url": "https://silvioalbqrq.github.io/consulta-cest/",
-    "categoria": "consultas",
-    "categoriaLabel": "Consultas / ICMS",
-    "tags": [
-      "CEST",
-      "NCM",
-      "ST",
-      "Convênio 142/18"
-    ]
-  },
-  {
-    "id": "consulta-cnae",
-    "nome": "Consulta CNAE — Simples Nacional",
-    "descricao": "Dashboard de enquadramento no Simples por CNAE (Subclasses IBGE 2.3, LC 123/06) — optante, ambíguo com Fator R, vedado e MEI, com análise de cartão CNPJ e simulador de alíquota efetiva.",
-    "url": "https://silvioalbqrq.github.io/consulta-cnae/",
-    "categoria": "consultas",
-    "categoriaLabel": "Consultas / ICMS",
-    "tags": [
-      "CNAE",
-      "Simples",
-      "Fator R",
-      "MEI"
-    ]
-  },
-  {
-    "id": "consulta-ncm",
-    "nome": "Consulta NCM × TIPI",
-    "descricao": "Painel NCM × TIPI (Decreto 11.158/2022 até ADE RFB 001/2026) — 15.653 linhas, busca por código/descrição, filtro por alíquota, EX e NT, com exportação CSV, 100% local.",
-    "url": "https://silvioalbqrq.github.io/consulta-ncm/",
-    "categoria": "consultas",
-    "categoriaLabel": "Consultas / ICMS",
-    "tags": [
-      "NCM",
-      "TIPI",
-      "IPI",
-      "Tabela"
-    ]
-  },
-  {
     "id": "icms-ceara-ncm",
     "nome": "ICMS Ceará por NCM — Consulta e Leitor de XML",
     "descricao": "Tributação do ICMS-CE por NCM (base SISCOEX + camada de vigência 2026): busca por código/descrição, leitor de XML NF-e/NFC-e (arquivo, pasta, ZIP) com totais ICMS sem ST/ST e ISS manual, e seção Atualizações 2026. 100% local.",
@@ -173,33 +180,6 @@
       "XML",
       "NF-e",
       "Ceará"
-    ]
-  },
-  {
-    "id": "consulta-cfop",
-    "nome": "CFOP — Localizador de Operações",
-    "descricao": "Localizador de CFOP (entradas 1·2·3 / saídas 5·6·7, IT 2023.002 v2.10) — 619 registros com filtros de fluxo, UF e natureza, ficha completa e espelho de devolução.",
-    "url": "https://silvioalbqrq.github.io/consulta-cfop/",
-    "categoria": "consultas",
-    "categoriaLabel": "Consultas / ICMS",
-    "tags": [
-      "CFOP",
-      "NF-e",
-      "Operações"
-    ]
-  },
-  {
-    "id": "sitram-consulta-nfe",
-    "nome": "SITRAM — Consulta NFe Interestadual",
-    "descricao": "Consulta em lote por chave de acesso (44 dígitos) no SITRAM/SEFAZ-CE — situação paga, a pagar, sem cobrança ou não selada, com CSV/TXT, painel de totais e exportação CSV.",
-    "url": "https://silvioalbqrq.github.io/sitram-consulta-nfe/",
-    "categoria": "consultas",
-    "categoriaLabel": "Consultas / ICMS",
-    "tags": [
-      "SITRAM",
-      "SEFAZ-CE",
-      "NF-e",
-      "Chave de acesso"
     ]
   },
   {
@@ -233,21 +213,6 @@
     ]
   },
   {
-    "id": "anexo-viii-cnpj",
-    "nome": "Tabela de Documentos e Orientações — Inscrição, Alteração e Baixa no CNPJ",
-    "descricao": "Anexo VIII da IN RFB 20119/2022 — 85 registros por Natureza Jurídica com data do evento, ato exigido e base legal com link direto ao artigo.",
-    "url": "https://silvioalbqrq.github.io/Anexo-viii-CNPJ/",
-    "categoria": "consultas",
-    "categoriaLabel": "Consultas / CNPJ",
-    "tags": [
-      "CNPJ",
-      "Anexo VIII",
-      "IN RFB",
-      "Natureza Jurídica",
-      "Consulta"
-    ]
-  },
-  {
     "id": "pis-cofins-monofasico-ncm",
     "nome": "PIS/COFINS Monofásico por NCM — Leitor de XML",
     "descricao": "Importa XMLs de NFCe (65) e NFe (55) avulsos, de pasta ou .ZIP, indica item a item se o NCM é monofásico (Tab. 4.3.10 v1.25) e totaliza SIM/NÃO + serviços, com exportação Excel/CSV.",
@@ -264,6 +229,107 @@
     ]
   },
   {
+    "id": "sitram-consulta-nfe",
+    "nome": "SITRAM — Consulta NFe Interestadual",
+    "descricao": "Consulta em lote por chave de acesso (44 dígitos) no SITRAM/SEFAZ-CE — situação paga, a pagar, sem cobrança ou não selada, com CSV/TXT, painel de totais e exportação CSV.",
+    "url": "https://silvioalbqrq.github.io/sitram-consulta-nfe/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "SITRAM",
+      "SEFAZ-CE",
+      "NF-e",
+      "Chave de acesso"
+    ]
+  },
+  {
+    "id": "consulta-ncm",
+    "nome": "Consulta NCM × TIPI",
+    "descricao": "Painel NCM × TIPI (Decreto 11.158/2022 até ADE RFB 001/2026) — 15.653 linhas, busca por código/descrição, filtro por alíquota, EX e NT, com exportação CSV, 100% local.",
+    "url": "https://silvioalbqrq.github.io/consulta-ncm/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "NCM",
+      "TIPI",
+      "IPI",
+      "Tabela"
+    ]
+  },
+  {
+    "id": "consulta-cest",
+    "nome": "Consulta CEST & NCM",
+    "descricao": "Localiza o CEST a partir da NCM ou descrição — 1.032 registros dos Anexos II a XXVI do Convênio ICMS 142/18, até Conv. 95/24, com exportação CSV.",
+    "url": "https://silvioalbqrq.github.io/consulta-cest/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "CEST",
+      "NCM",
+      "ST",
+      "Convênio 142/18"
+    ]
+  },
+  {
+    "id": "consulta-cnae",
+    "nome": "Consulta CNAE — Simples Nacional",
+    "descricao": "Dashboard de enquadramento no Simples por CNAE (Subclasses IBGE 2.3, LC 123/06) — optante, ambíguo com Fator R, vedado e MEI, com análise de cartão CNPJ e simulador de alíquota efetiva.",
+    "url": "https://silvioalbqrq.github.io/consulta-cnae/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "CNAE",
+      "Simples",
+      "Fator R",
+      "MEI"
+    ]
+  },
+  {
+    "id": "consulta-cfop",
+    "nome": "CFOP — Localizador de Operações",
+    "descricao": "Localizador de CFOP (entradas 1·2·3 / saídas 5·6·7, IT 2023.002 v2.10) — 619 registros com filtros de fluxo, UF e natureza, ficha completa e espelho de devolução.",
+    "url": "https://silvioalbqrq.github.io/consulta-cfop/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "CFOP",
+      "NF-e",
+      "Operações"
+    ]
+  },
+  {
+    "id": "anexo-viii-cnpj",
+    "nome": "Tabela de Documentos e Orientações — Inscrição, Alteração e Baixa no CNPJ",
+    "descricao": "Anexo VIII da IN RFB 20119/2022 — 85 registros por Natureza Jurídica com data do evento, ato exigido e base legal com link direto ao artigo.",
+    "url": "https://silvioalbqrq.github.io/Anexo-viii-CNPJ/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / CNPJ",
+    "tags": [
+      "CNPJ",
+      "Anexo VIII",
+      "IN RFB",
+      "Natureza Jurídica",
+      "Consulta"
+    ]
+  },
+  {
+    "id": "ajustes-sinief-2026",
+    "nome": "Portal Completo Ajustes SINIEF 01 a 40/2026 - CONFAZ",
+    "descricao": "Portal de estudo dos 40 Ajustes SINIEF de 2026: fichas por ajuste, quiz, cronograma de vigencias e links oficiais. NF-e, NFC-e, CT-e, MDF-e, BP-e, NF3e, NFCom, DC-e e PIS/COFINS. 100% local.",
+    "url": "https://silvioalbqrq.github.io/ajustes-sinief-2026/",
+    "categoria": "consultas",
+    "categoriaLabel": "Consultas / ICMS",
+    "tags": [
+      "SINIEF",
+      "CONFAZ",
+      "NF-e",
+      "NFC-e",
+      "CT-e",
+      "MDF-e",
+      "2026"
+    ]
+  },
+  {
     "id": "conversor-xml-excel",
     "nome": "Conversor XML → Excel",
     "descricao": "Processa NFe (55) e NFCe (65) em lote, com CST IBS/CBS, agrupamento por produto e exportação .xlsx.",
@@ -275,6 +341,19 @@
       "Excel",
       "NFe",
       "NFCe"
+    ]
+  },
+  {
+    "id": "conversor-csv-excel",
+    "nome": "Conversor CSV ↔ Excel Pro",
+    "descricao": "Converte CSV → Excel e Excel → CSV 100% no navegador, com preview, estatísticas e limite de 100 MB.",
+    "url": "https://silvioalbqrq.github.io/converter-csv-excel/",
+    "categoria": "conversores",
+    "categoriaLabel": "Conversores / Utilidades",
+    "tags": [
+      "CSV",
+      "Excel",
+      "Conversor"
     ]
   },
   {
@@ -301,35 +380,6 @@
       "Markdown",
       "Documentos",
       "IA"
-    ]
-  },
-  {
-    "id": "conversor-csv-excel",
-    "nome": "Conversor CSV ↔ Excel Pro",
-    "descricao": "Converte CSV → Excel e Excel → CSV 100% no navegador, com preview, estatísticas e limite de 100 MB.",
-    "url": "https://silvioalbqrq.github.io/converter-csv-excel/",
-    "categoria": "conversores",
-    "categoriaLabel": "Conversores / Utilidades",
-    "tags": [
-      "CSV",
-      "Excel",
-      "Conversor"
-    ]
-  },
-  {
-    "id": "alienacao-imovel",
-    "nome": "Simulador tributário IBS / CBS — Imóveis",
-    "descricao": "Alienação, locação mensal e hospedagem ≤90 dias — redutores de ajuste/social, alíquotas −50%/−70%/−40% (Dec. 12.955/26 e CGIBS 6).",
-    "url": "https://silvioalbqrq.github.io/alienacao-imovel/",
-    "categoria": "reforma",
-    "categoriaLabel": "Reforma / IBS-CBS",
-    "tags": [
-      "Imóveis",
-      "Alienação",
-      "Locação",
-      "Hospedagem",
-      "IBS",
-      "CBS"
     ]
   },
   {
@@ -369,56 +419,6 @@
       "Planejamento",
       "Créditos",
       "Teses"
-    ]
-  },
-  {
-    "id": "aliquota-simples",
-    "nome": "Aliquota Simples - NFS-e",
-    "descricao": "Calcula a aliquota efetiva do Simples Nacional para o campo Valor aproximado dos tributos da NFS-e. Importa o extrato PGDAS-D ou calculo manual, por atividade e anexo, com tabelas 2026 e Simples hibrido 2027-2028.",
-    "url": "https://silvioalbqrq.github.io/aliquota-sn/",
-    "categoria": "simples-iss",
-    "categoriaLabel": "ISS / Simples Nacional",
-    "tags": [
-      "Simples",
-      "NFS-e",
-      "Aliquota",
-      "PGDAS-D",
-      "DAS",
-      "Fator R",
-      "Hibrido"
-    ]
-  },
-  {
-    "id": "ajustes-sinief-2026",
-    "nome": "Portal Completo Ajustes SINIEF 01 a 40/2026 - CONFAZ",
-    "descricao": "Portal de estudo dos 40 Ajustes SINIEF de 2026: fichas por ajuste, quiz, cronograma de vigencias e links oficiais. NF-e, NFC-e, CT-e, MDF-e, BP-e, NF3e, NFCom, DC-e e PIS/COFINS. 100% local.",
-    "url": "https://silvioalbqrq.github.io/ajustes-sinief-2026/",
-    "categoria": "consultas",
-    "categoriaLabel": "Consultas / ICMS",
-    "tags": [
-      "SINIEF",
-      "CONFAZ",
-      "NF-e",
-      "NFC-e",
-      "CT-e",
-      "MDF-e",
-      "2026"
-    ]
-  },
-  {
-    "id": "importador-nfse",
-    "nome": "Importador de NFS-e",
-    "descricao": "Importa XMLs de notas fiscais de serviços, extrai campos (data emissão, tomador, NFS-e, valores, ISS, INSS, município), detecta status (cancelada, processada, processamento) e apresenta listagem filtrável/exportável com paginação.",
-    "url": "https://silvioalbqrq.github.io/ImportadorNFSe/",
-    "categoria": "simples-iss",
-    "categoriaLabel": "ISS / Simples Nacional",
-    "tags": [
-      "NFS-e",
-      "ISS",
-      "Importação",
-      "XML",
-      "Cancelamento",
-      "Processamento"
     ]
   }
 ]

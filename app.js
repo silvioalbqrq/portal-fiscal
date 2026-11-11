@@ -30,7 +30,6 @@ const FALLBACK_TOOLS = [
 ];
 
 const FAV_KEY = "hubfiscal:favoritos:v1";
-const APP_VERSION = "20261016-01";
 // Aliases de IDs renomeados: favorito antigo -> ID atual (migração automática).
 const FAV_ALIASES = {
   "danfe-reforma-nt2026-010": "danfe-reforma-nt2026",
@@ -159,7 +158,8 @@ function sincronizarFavoritos() {
 async function carregarFerramentas() {
   carregarFavoritos();
   try {
-    const resp = await fetch("tools.json?v=" + APP_VERSION, { cache: "no-store" });
+    // ?v= com timestamp: o valor fixo antigo (20261016-01) nunca mudava, então navegador e CDN do Pages (max-age=600) seguiam entregando o tools.json velho.
+    const resp = await fetch("tools.json?v=" + Date.now(), { cache: "no-store" });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     const data = await resp.json();
     const limpa = sanitizarLista(data);
@@ -202,7 +202,7 @@ function normalizar(s) {
 
 function filtrar() {
   const termo = normalizar(busca.value.trim());
-  return TOOLS.filter((t) => {
+  const lista = TOOLS.filter((t) => {
     let okFiltro = true;
     if (filtroAtual === "favoritos") okFiltro = favoritos.has(t.id);
     else if (filtroAtual !== "todos") okFiltro = t.categoria === filtroAtual;
@@ -211,6 +211,8 @@ function filtrar() {
     const alvo = normalizar(t.nome + " " + t.descricao + " " + t.url + " " + (t.tags || []).join(" ") + " " + (t.categoriaLabel || ""));
     return termo.split(/\s+/).every((p) => alvo.includes(p));
   });
+  // favoritos (★) nas primeiras linhas; empate mantém o agrupamento do tools.json
+  return lista.sort((a, b) => (favoritos.has(b.id) ? 1 : 0) - (favoritos.has(a.id) ? 1 : 0));
 }
 
 function render() {

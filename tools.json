@@ -169,6 +169,23 @@
     ]
   },
   {
+    "id": "danfse-web",
+    "nome": "DANFSe a partir do XML",
+    "descricao": "Converte o XML da NFS-e no DANFSe oficial em PDF, com ou sem canhoto, usando o motor da Receita em WebAssembly no próprio navegador. Aceita lote e devolve ZIP; sem certificado, nada sai da máquina.",
+    "url": "https://silvioalbqrq.github.io/danfse-web/",
+    "categoria": "simples-iss",
+    "categoriaLabel": "ISS / Simples Nacional",
+    "tags": [
+      "NFS-e",
+      "DANFSe",
+      "ISS",
+      "XML",
+      "PDF",
+      "WebAssembly",
+      "Lote"
+    ]
+  },
+  {
     "id": "iss-fixo",
     "nome": "Portal do ISS Fixo",
     "descricao": "Elegibilidade e economia para sociedades uniprofissionais — Fortaleza e Canindé/CE (DL 406/68, STF Tema 918).",

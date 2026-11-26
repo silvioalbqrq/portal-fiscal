@@ -30,6 +30,22 @@
     ]
   },
   {
+    "id": "calculadora-regime-regular",
+    "nome": "Calculadora CBS e IBS — Regime Regular",
+    "descricao": "Calcula CBS, IBS estadual e IBS municipal de uma operação pelo motor oficial que a Receita Federal publicou em código aberto: CST, cClassTrib, NCM/NBS, alíquotas da data e memória de cálculo.",
+    "url": "https://silvioalbqrq.github.io/calculadora-regime-regular/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "Calculadora",
+      "IBS",
+      "CBS",
+      "Motor oficial",
+      "Receita Federal",
+      "LC 214/2025"
+    ]
+  },
+  {
     "id": "conferencia-ibs-cbs-ncm",
     "nome": "Conferência IBS/CBS por NCM",
     "descricao": "Confere item a item o CST e o cClassTrib de XML de NF-e/NFC-e, planilha, pasta inteira ou .zip/.rar contra a base oficial por NCM, sinaliza divergências, permite escolher a tributação correta e exporta a planilha corrigida — 100% no navegador.",

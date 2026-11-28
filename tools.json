@@ -46,6 +46,24 @@
     ]
   },
   {
+    "id": "simples-nacional-ibs-cbs",
+    "nome": "Calculadora IBS e CBS - Simples Nacional",
+    "descricao": "Calcula IBS, CBS e o DAS sobre uma operação de empresa do Simples Nacional pelo motor oficial da Receita Federal: NCM para NF-e/NFC-e ou NBS para NFS-e, CST, cClassTrib, alíquota efetiva e percentual de repartição por tributo.",
+    "url": "https://silvioalbqrq.github.io/calculadora-simples/",
+    "categoria": "reforma",
+    "categoriaLabel": "Reforma / IBS-CBS",
+    "tags": [
+      "Calculadora",
+      "IBS",
+      "CBS",
+      "Simples Nacional",
+      "DAS",
+      "NCM",
+      "NBS",
+      "Motor oficial"
+    ]
+  },
+  {
     "id": "conferencia-ibs-cbs-ncm",
     "nome": "Conferência IBS/CBS por NCM",
     "descricao": "Confere item a item o CST e o cClassTrib de XML de NF-e/NFC-e, planilha, pasta inteira ou .zip/.rar contra a base oficial por NCM, sinaliza divergências, permite escolher a tributação correta e exporta a planilha corrigida — 100% no navegador.",
